@@ -1,7 +1,7 @@
-<h1 align="center"> RocketMovies (Front-End) </h1>
+<h1 align="center"> Food Explorer (Front-end) </h1>
 
 <p align="center">
-Aplicação para acompanhar tudo que assistir.
+Aplicação para ser usada como cardápio digital ou menu interativo para um restaurante, lanchonete, etc.
 </p>
 
 <p align="center">
@@ -27,7 +27,12 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - Styled-Components
 - Vite
 
+##
+
+## 👨‍💻 Veja o [Back-end](https://github.com/apolomoraes/food-explorer_back-end) 
+
 ## 💻 Projeto
 
-O RocketMovies é uma aplicação para você acompanhar tudo que assistir.
+- Desafio final do curso Explorer da Rocketseat.
+- ⚠️Importante: Este projeto está utilizando uma hospedagem gratuita para o seu backend, portanto, pode haver atrasos no tempo de resposta do servidor.
 ##
