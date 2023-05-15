@@ -1,10 +1,10 @@
 import { Container } from './styles';
 
-export function Button({ title, backgroundColor, ...rest }) {
+export function Button({ title, background, ...rest }) {
   return (
     <Container
       type='button'
-      backgroundColor={backgroundColor}
+      background={background}
       {...rest}
     >
       {title}

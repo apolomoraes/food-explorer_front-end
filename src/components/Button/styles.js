@@ -6,12 +6,12 @@ export const Container = styled.button`
   padding: 1.2rem 3.2rem;
   border: 0;
 
-  background-color: ${props => props.backgroundColor};
+  background-color: ${props => props.background};
   color: ${({ theme }) => theme.COLORS.WHITE};
 
   border-radius: 5px;
 
-  font-family: ${({ theme }) => theme.FONT_POPPINS};
+  font-family: ${({ theme }) => theme.FONT.FONT_POPPINS};
   font-weight: 500;
   font-size: 1.4rem;
   line-height: 2.4rem;

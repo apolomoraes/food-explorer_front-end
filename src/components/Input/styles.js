@@ -7,7 +7,7 @@ export const Container = styled.div`
   gap: 0.8rem;
 
   > label {
-  font-family: ${({ theme }) => theme.FONT_ROBOTO};
+  font-family: ${({ theme }) => theme.FONT.FONT_ROBOTO};
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 100%;
@@ -30,7 +30,7 @@ export const Field = styled.div`
   > input {
   width: 100%;
 
-  font-family: ${({ theme }) => theme.FONT_ROBOTO};
+  font-family: ${({ theme }) => theme.FONT.FONT_ROBOTO};
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 100%;
@@ -41,7 +41,7 @@ export const Field = styled.div`
   border: 0;
 
   &:placeholder {
-    color: ${({ theme }) => theme.COLORS.GRAY_500};
+  color: ${({ theme }) => theme.COLORS.GRAY_500};
   }
 
   > svg {

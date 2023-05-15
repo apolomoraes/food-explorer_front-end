@@ -22,8 +22,9 @@ export default {
 
     GREEN: "#04D361",
     ORANGE: "#FBA94C",
-    RED: "#AB222E",
-
+    RED: "#AB222E"
+  },
+  FONT: {
     FONT_POPPINS: "Poppins, sans-serif",
     FONT_ROBOTO: "Roboto, sans-serif"
   }
