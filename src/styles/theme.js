@@ -24,7 +24,7 @@ export default {
     ORANGE: "#FBA94C",
     RED: "#AB222E",
 
-    FONT_POPPINS: 'Poppins, sans- serif',
-    FONT_ROBOTO: 'Roboto, sans- serif',
+    FONT_POPPINS: "Poppins, sans-serif",
+    FONT_ROBOTO: "Roboto, sans-serif"
   }
 };
