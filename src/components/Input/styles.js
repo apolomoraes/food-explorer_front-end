@@ -24,6 +24,7 @@ export const Field = styled.div`
   gap: 1rem;
   padding: 1.2rem 1.4rem;
 
+
   background: ${({ theme }) => theme.COLORS.BACKGROUND_700};
   border-radius: 8px;
 

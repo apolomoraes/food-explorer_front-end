@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   min-width: 42.8rem;
+
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -17,6 +18,19 @@ export const Form = styled.div`
 
   .logo {
     align-self: flex-start;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+  }
+
+  .wrapper h1 {
+    display: none;
+
   }
 
   .inputs {
@@ -51,7 +65,7 @@ export const Form = styled.div`
     }
 
     .wrapper {
-      min-width: 47.6rem;
+      max-width: 50rem;
       min-height: 54rem;
 
       background-color: ${({ theme }) => theme.COLORS.BACKGROUND_SIGN};
@@ -64,6 +78,24 @@ export const Form = styled.div`
       
       padding: 6.4rem;
       border-radius: 1.6rem;
+    }
+
+    .inputs {
+      gap: 3.2rem;
+      margin: 0;
+    }
+    
+    a {
+      margin: 0;
+    }
+
+    .wrapper h1 {
+      font-family: ${({ theme }) => theme.FONT.FONT_POPPINS};
+      font-weight: 500;
+      font-size: 3.2rem;
+      line-height: 140%;
+
+      display: flex;
     }
 
   }
