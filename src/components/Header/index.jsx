@@ -11,7 +11,7 @@ export function Header() {
     <Container>
       <Menu>
         <AiOutlineMenu size={24} />
-        <Logo width={"24px"} height={"24px"} fontSize={"2.2rem"} />
+        <Logo width={"40px"} height={"40px"} fontSize={"2.2rem"} />
 
         <button>
           <BsReceiptCutoff size={24} />
