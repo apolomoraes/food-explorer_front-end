@@ -17,5 +17,5 @@ export const Container = styled.section`
 
 export const Cards = styled.div`
   display: flex;
-  gap: 16px;
+  gap: 1.6rem;
 `

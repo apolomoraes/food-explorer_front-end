@@ -1,33 +1,36 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  min-width: 42.8rem;
+  min-width: 40rem;
   height: 100vh;
 
-  
-.arrow {
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  fill: #fff;
-  cursor: pointer;
+  .menu {
+  display: flex;
+  gap: 2.4rem;
+  }
+
+  /* .swiper {
+  width: 100%;
+  height: 100%;
 }
 
-.arrow--left {
-  left: 5px;
-}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
 
-.arrow--right {
-  left: auto;
-  right: 5px;
-}
+  /* Center slide text vertically */
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+} */
 
-.arrow--disabled {
-  fill: rgba(255, 255, 255, 0.5);
-}
+/* .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} */
 `
 
 export const Description = styled.div`
@@ -72,10 +75,4 @@ export const Description = styled.div`
       color: ${({ theme }) => theme.COLORS.GRAY_100};
     }
   }
-`
-
-export const Menu = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 2.4rem;
 `

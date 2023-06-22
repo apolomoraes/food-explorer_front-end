@@ -21,8 +21,8 @@ export function Card({ plateName, value, image }) {
   };
 
   return (
-    <Container>
-      <button onClick={handleClick}>
+    <Container isclicked={isClicked ? 1 : 0}>
+      <button onClick={handleClick} className="favorite">
         {isClicked ? <AiFillHeart size={24} /> : <AiOutlineHeart size={24} />}
       </button>
 

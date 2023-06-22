@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 21.0rem;
+  width: 20rem;
   height: fit-content;
   background: ${({ theme }) => theme.COLORS.BACKGROUND_CARD};
 
@@ -13,13 +13,13 @@ export const Container = styled.div`
   border: 1px solid #000204;
   border-radius: .8rem;
 
-  button:nth-child(1) {
+  .favorite {
     align-self: flex-end;
     border: none;
     background-color: transparent;
 
-    svg {
-      color: ${({ theme }) => theme.COLORS.WHITE};
+    svg{
+      fill: ${({ theme, isclicked }) => isclicked ? theme.COLORS.RED : theme.COLORS.WHITE};
     }
   }
 `
@@ -77,4 +77,8 @@ export const Value = styled.span`
   text-align: center;
 
   color: ${({ theme }) => theme.COLORS.CYAN};
+`
+
+export const Favorite = styled.button`
+  
 `
