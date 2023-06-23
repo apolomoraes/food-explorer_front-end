@@ -1,13 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  min-width: 40rem;
+  min-width: 42.8rem;
   height: 100vh;
-
-  .menu {
-  display: flex;
-  gap: 2.4rem;
-  }
 
   /* .swiper {
   width: 100%;
@@ -34,7 +29,7 @@ export const Container = styled.div`
 `
 
 export const Description = styled.div`
-  width: 42rem;
+  min-width: 42rem;
   margin: 4.4rem auto 6rem;
   border-radius: .2rem;
 
@@ -56,6 +51,12 @@ export const Description = styled.div`
     left: 15px;
   }
 
+  img {
+    width:clamp(11.938rem, -0.612rem + 46.915vw, 39.5rem);
+    object-fit: cover;
+    align-self: end;
+  }
+
   div {
     display: flex;
     flex-direction: column;
@@ -75,4 +76,29 @@ export const Description = styled.div`
       color: ${({ theme }) => theme.COLORS.GRAY_100};
     }
   }
+
+  @media(min-width: 1024px) {
+    width: 112rem;
+    height: 26rem;
+
+    div {
+      margin: auto;
+
+      h2 {
+      font-size: 4.0rem;
+      font-weight: 500;
+    }
+
+    p {
+      font-size: 1.6rem;
+      line-height: 100%;
+    }
+    }
+  }
+`
+
+export const Menu = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
 `

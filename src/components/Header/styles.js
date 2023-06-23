@@ -17,7 +17,7 @@ export const Menu = styled.div`
   align-items: center;
   padding: 0 2.8rem 0 2.8rem;
 
-  button {
+  .mobile {
     background: none;
     border: none;
     color: ${({ theme }) => theme.COLORS.WHITE};
@@ -42,4 +42,41 @@ export const Menu = styled.div`
       font-size: 1.4rem;
     }
   }
+
+  @media(min-width: 1024px) {
+    padding: 2.4rem 12.3rem;
+
+    .mobile {
+      display: none;
+    }
+
+    > svg:nth-child(1) {
+      display: none;
+    }
+  }
 `;
+
+export const Desktop = styled.button`
+  display: flex;
+
+  width: 21.6rem;
+  padding: 1.2rem 3.2rem;
+  border: none;
+
+  justify-content: center;
+  align-items: center;
+  gap: .8rem;
+
+  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_BUTTON_300};
+  color: ${({ theme }) => theme.COLORS.WHITE};
+
+  border-radius: .5rem;
+`
+
+export const Search = styled.div`
+  display: none;
+
+  @media(min-width: 1024px) {
+    
+  }
+`

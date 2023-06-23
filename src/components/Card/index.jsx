@@ -1,4 +1,4 @@
-import { Container, Amount, PlateName, Value } from "./styles";
+import { Container, Amount, PlateName, Value, Description } from "./styles";
 import { Button } from '../../components/Button';
 import { AiOutlinePlus, AiOutlineHeart, AiFillHeart, AiOutlineMinus } from "react-icons/ai";
 import { BsArrowRightShort } from "react-icons/bs";
@@ -28,26 +28,32 @@ export function Card({ plateName, value, image }) {
 
       <img src={image} alt={`Imagem do prato/lanche ${plateName}`} />
 
-      <PlateName>
-        <p>{plateName}</p>
-        <button>
-          <BsArrowRightShort size={24} />
-        </button>
-      </PlateName>
+      <Description>
+        <PlateName>
+          <p>{plateName}</p>
+          <button>
+            <BsArrowRightShort size={24} />
+          </button>
+        </PlateName>
+
+        <span>Rabanetes, folhas verdes e molho agridoce salpicados com gergelim</span>
+      </Description>
 
       <Value>R$ {value}</Value>
 
       <Amount>
-        <button onClick={decrement}>
-          <AiOutlineMinus size={24} />
-        </button>
-        <span>{amount.toString().padStart(2, '0')}</span>
-        <button onClick={increment}>
-          <AiOutlinePlus size={24} />
-        </button>
+        <div>
+          <button className="decrement" onClick={decrement}>
+            <AiOutlineMinus size={24} />
+          </button>
+          <span>{amount.toString().padStart(2, '0')}</span>
+          <button className="increment" onClick={increment}>
+            <AiOutlinePlus size={24} />
+          </button>
+        </div>
+        <Button title={'Incluir'} background={'#750310'} />
       </Amount>
 
-      <Button title={'Incluir'} background={'#750310'} />
     </Container>
   )
 }

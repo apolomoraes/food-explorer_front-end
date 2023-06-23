@@ -1,5 +1,5 @@
 import { Header } from "../../components/Header";
-import { Container, Description } from "./styles";
+import { Container, Description, Menu } from "./styles";
 import { Card } from "../../components/Card";
 import flavors from "../../assets/flavors.png";
 import prate from '../../assets/prate.png';
@@ -29,24 +29,22 @@ export function Home() {
         </div>
       </Description>
 
-      <Section title="Refeições">
-        <Slider settings={settings}>
-          <SwiperSlide><Card image={prate} plateName="Prato" value="25,00" /></SwiperSlide>
-          <SwiperSlide><Card image={prate} plateName="Prato" value="25,00" /></SwiperSlide>
-          <SwiperSlide><Card image={prate} plateName="Prato" value="25,00" /></SwiperSlide>
-          <SwiperSlide><Card image={prate} plateName="Prato" value="25,00" /></SwiperSlide>
-          <SwiperSlide><Card image={prate} plateName="Prato" value="25,00" /></SwiperSlide>
-          <SwiperSlide><Card image={prate} plateName="Prato" value="25,00" /></SwiperSlide>
-          <SwiperSlide><Card image={prate} plateName="Prato" value="25,00" /></SwiperSlide>
-          <SwiperSlide><Card image={prate} plateName="Prato" value="25,00" /></SwiperSlide>
-          <SwiperSlide><Card image={prate} plateName="Prato" value="25,00" /></SwiperSlide>
-          <SwiperSlide><Card image={prate} plateName="Prato" value="25,00" /></SwiperSlide>
-          <SwiperSlide><Card image={prate} plateName="Prato" value="25,00" /></SwiperSlide>
-          <SwiperSlide><Card image={prate} plateName="Prato" value="25,00" /></SwiperSlide>
-          <SwiperSlide><Card image={prate} plateName="Prato" value="25,00" /></SwiperSlide>
-          <SwiperSlide><Card image={prate} plateName="Prato" value="25,00" /></SwiperSlide>
-        </Slider>
-      </Section>
+      <Menu>
+        <Section title="Refeições">
+          <Card image={prate} value="47,99" plateName="Salada Ravanello" />
+          <Card image={prate} value="47,99" plateName="Salada Ravanello" />
+        </Section>
+
+        <Section title="Pratos principais">
+          <Card image={prate} value="47,99" plateName="Salada Ravanello" />
+          <Card image={prate} value="47,99" plateName="Salada Ravanello" />
+        </Section>
+
+        <Section title="Sobremesas">
+          <Card image={prate} value="47,99" plateName="Salada Ravanello" />
+          <Card image={prate} value="47,99" plateName="Salada Ravanello" />
+        </Section>
+      </Menu>
 
     </Container >
   )

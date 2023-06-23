@@ -1,8 +1,11 @@
 import styled from 'styled-components';
 
 export const Container = styled.button`
+  display: flex;
+  align-items: center;
+
   width: 100%;
-  height: 4.8rem;
+  height: 3.2rem;
   padding: 1.2rem 3.2rem;
   border: 0;
 
@@ -16,4 +19,8 @@ export const Container = styled.button`
   font-size: 1.4rem;
   line-height: 2.4rem;
   text-align: center;
+
+  @media(min-width: 1024px) {
+    height: 4.8rem;
+  }
 `;
