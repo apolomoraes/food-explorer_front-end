@@ -1,15 +1,16 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  min-width: 42.8rem;
+  min-width: 30rem;
   height: 100vh;
 
   display: grid;
 
-  grid-template-rows: 11.6rem auto;
+  grid-template-rows: 11.4rem auto;
   grid-template-areas: 
   "header"
   "content"
+  "footer"
   ;
 
   /* .swiper {
@@ -36,12 +37,14 @@ export const Container = styled.div`
 } */
 `
 
-export const Content = styled.div`
-  grid-area: content;
-
+export const Wrapper = styled.div`
   height: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
+`
+
+export const Content = styled.div`
+  grid-area: content;
 
   display: flex;
   flex-direction: column;
@@ -106,7 +109,7 @@ export const Description = styled.div`
     height: 26rem;
 
     div {
-      margin: auto;
+      margin-left: 2rem;
 
       h2 {
       font-size: 4.0rem;

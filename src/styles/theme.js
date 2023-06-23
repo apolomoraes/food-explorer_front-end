@@ -13,6 +13,7 @@ export default {
     BACKGROUND_BUTTON_300: "#750310",
 
     WHITE: "#FFFFFF",
+    WHITE_200: "#FFFAF1",
 
     GRAY_100: "#E1E1E6;",
     GRAY_300: "#C4C4CC",
@@ -28,6 +29,7 @@ export default {
   },
   FONT: {
     FONT_POPPINS: "Poppins, sans-serif",
-    FONT_ROBOTO: "Roboto, sans-serif"
+    FONT_ROBOTO: "Roboto, sans-serif",
+    FONT_DM: "DM Sans, sans-serif"
   }
 };
