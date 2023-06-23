@@ -10,5 +10,6 @@ display: flex;
   font-weight: 700;
   font-size: ${(props) => props.fontSize};
   line-height: 4.4rem;
- }
+  display: ${(props) => props.display};
+  }
 `;

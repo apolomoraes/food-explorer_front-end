@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  grid-area: header;
   width: 100%;
   height: 11.4rem;
+
 
   background: ${({ theme }) => theme.COLORS.BACKGROUND_SIGN};
 
@@ -15,6 +17,7 @@ export const Menu = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  text-align: center;
   padding: 0 2.8rem 0 2.8rem;
 
   .mobile {
@@ -56,27 +59,76 @@ export const Menu = styled.div`
   }
 `;
 
-export const Desktop = styled.button`
-  display: flex;
+export const Desktop = styled.div`
+  display: none;
 
-  width: 21.6rem;
-  padding: 1.2rem 3.2rem;
-  border: none;
+  @media(min-width: 1024px) {
+    display: flex;
+    gap: 3.2rem;
+    align-items: center;
 
-  justify-content: center;
-  align-items: center;
-  gap: .8rem;
+    button {
+      border: none;
+      
+      display: flex;
+      gap: .8rem;
 
-  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_BUTTON_300};
-  color: ${({ theme }) => theme.COLORS.WHITE};
+      width: 21.6rem;
+      padding: 1.2rem 3.2rem;
+    
+      justify-content: center;
+      align-items: center;
+    
+      background-color: ${({ theme }) => theme.COLORS.BACKGROUND_BUTTON_300};
+      color: ${({ theme }) => theme.COLORS.WHITE};
+    
+      border-radius: .5rem;
+    }
 
-  border-radius: .5rem;
+    a {
+      color: ${({ theme }) => theme.COLORS.WHITE};
+    }
+  }
 `
 
 export const Search = styled.div`
   display: none;
 
   @media(min-width: 1024px) {
-    
+    display: flex;
+    margin: 0 4rem;
+
+    width: 60rem;
+
+    height: 4.8rem;
+    padding: 1.2rem 1.4rem;
+
+    align-items: center;
+    gap: 1.4rem;
+
+    background: ${({ theme }) => theme.COLORS.BACKGROUND_700};
+    border-radius: 8px;
+
+    > svg {
+      margin: 0 0.3rem 0 1rem;
+    }
+
+    > input {
+      font-family: ${({ theme }) => theme.FONT.FONT_ROBOTO};
+      font-weight: 400;
+      font-size: 1.6rem;
+      line-height: 100%;
+
+      width: 100%;
+
+      color: ${({ theme }) => theme.COLORS.WHITE};
+
+      background: transparent;
+      border: 0;
+
+      &:placeholder {
+        color: ${({ theme }) => theme.COLORS.GRAY_500};
+      }
+    }
   }
 `

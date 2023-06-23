@@ -4,6 +4,14 @@ export const Container = styled.div`
   min-width: 42.8rem;
   height: 100vh;
 
+  display: grid;
+
+  grid-template-rows: 11.6rem auto;
+  grid-template-areas: 
+  "header"
+  "content"
+  ;
+
   /* .swiper {
   width: 100%;
   height: 100%;
@@ -28,12 +36,28 @@ export const Container = styled.div`
 } */
 `
 
+export const Content = styled.div`
+  grid-area: content;
+
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  display: flex;
+  flex-direction: column;
+  
+  @media(min-width: 1024px) {
+    padding: 0 12.4rem;
+  }
+`
+
 export const Description = styled.div`
   min-width: 42rem;
   margin: 4.4rem auto 6rem;
   border-radius: .2rem;
 
-  font-family: 'Poppins';
+
+  font-family: ${({ theme }) => theme.FONT.FONT_POPPINS};
 
   display: flex;
   align-items: center;

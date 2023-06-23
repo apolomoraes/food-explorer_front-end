@@ -43,7 +43,7 @@ export const Amount = styled.div`
 
   span {
     color: ${({ theme }) => theme.COLORS.GRAY_100};
-    font-family: 'Roboto';
+    font-family: ${({ theme }) => theme.FONT.FONT_ROBOTO};
     font-weight: 400;
     font-size: 1.6rem;
     line-height: 100%;
@@ -78,7 +78,7 @@ export const PlateName = styled.div`
     color: ${({ theme }) => theme.COLORS.GRAY_100};
     text-align: center;
 
-    font-family: 'Poppins';
+    font-family: ${({ theme }) => theme.FONT.FONT_POPPINS};
     font-weight: 500;
     font-size: clamp(0.875rem, 0.59rem + 1.064vw, 2.4rem);
     line-height: 2.4rem;
@@ -92,9 +92,9 @@ export const PlateName = styled.div`
 `
 
 export const Value = styled.span`
-  font-family: 'Roboto';
+  font-family: ${({ theme }) => theme.FONT.FONT_ROBOTO};
   font-weight: 400;
-  font-size: clamp(1rem, 0.545rem + 1.702vw, 2.5rem);
+  font-size: clamp(1.6rem, 0.545rem + 1.702vw, 2.5rem);
 
 
   text-align: center;
@@ -119,7 +119,7 @@ export const Description = styled.div`
     display: block;
     text-align: center;
     font-size: 1.4rem;
-    font-family: Roboto;
+    font-family: ${({ theme }) => theme.FONT.FONT_ROBOTO};
     line-height: 160%;
 
     color: ${({ theme }) => theme.COLORS.GRAY_300};
