@@ -39,12 +39,13 @@ export const Container = styled.div`
 
 export const Wrapper = styled.div`
   height: 100%;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
 `
 
 export const Content = styled.div`
   grid-area: content;
+
 
   display: flex;
   flex-direction: column;
