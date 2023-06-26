@@ -11,8 +11,6 @@ export const Container = styled.div`
   width: 100%;
   height: 7.7rem;
 
-  align-self: end;
-
   padding: 2.4rem 2rem;
   align-items: center;
 

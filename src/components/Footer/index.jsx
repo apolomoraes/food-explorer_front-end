@@ -1,11 +1,11 @@
 import { Container, Logo } from './styles';
-import logo from '../../assets/logo.svg';
+import logoFooter from '../../assets/logoFooter.svg';
 
 export function Footer() {
   return (
     <Container>
       <Logo>
-        <img src={logo} alt="Polígono Azul" />
+        <img src={logoFooter} alt="Polígono Azul" />
         <p>Food Explorer</p>
       </Logo>
 
