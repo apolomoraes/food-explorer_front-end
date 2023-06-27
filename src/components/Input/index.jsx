@@ -5,8 +5,9 @@ export function Input({ icon: Icon, title, id, ...rest }) {
     <Container>
       <label htmlFor={id}>{title}</label>
       <Field>
-        {Icon && <Icon size={20} />}
+        {Icon && <Icon size={24} />}
         <input id={id} {...rest} />
+
       </Field>
     </Container>
   );

@@ -3,11 +3,10 @@ import { useState } from "react";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import { Ingredient } from "../../components/Ingredient";
-import { IoIosArrowBack } from "react-icons/io";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { CiReceipt } from "react-icons/ci";
-import { BsPencil } from "react-icons/bs";
 import prate from "../../assets/prate.png";
+import { ButtonBack } from "../../components/ButtonBack";
 
 
 export function DishDetail() {
@@ -28,9 +27,8 @@ export function DishDetail() {
 
       <Wrapper>
         <Content>
-          <a href="">
-            <IoIosArrowBack size={24} />
-            voltar
+          <a href="#">
+            <ButtonBack fontSize="2.4rem" size="3.2rem" />
           </a>
 
           <img src={prate} alt="imagem do prato"/*{`Imagem do prato/lanche ${plateName}`}*/ />

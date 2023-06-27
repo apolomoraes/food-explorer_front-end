@@ -30,17 +30,8 @@ export const Content = styled.div`
   justify-content: center;
 
    a {
-    display: flex;
-    align-items: center;
     align-self: flex-start;
     margin-bottom: 1.6rem;
-
-    font-size: 2.4rem;
-    font-family: ${({ theme }) => theme.FONT.FONT_POPPINS};
-    font-weight: 500;
-    line-height: 140%;
-
-    color: ${({ theme }) => theme.COLORS.GRAY_100};
   }
 
    img {
