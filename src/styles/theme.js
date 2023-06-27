@@ -21,6 +21,7 @@ export default {
     GRAY_700: "#4D585E",
     GRAY_900: "#192227",
 
+
     CYAN: "#82F3FF",
 
     GREEN: "#04D361",

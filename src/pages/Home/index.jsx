@@ -20,10 +20,12 @@ export function Home() {
 
   return (
     <Container>
-      <Header />
+      <Header isAdmin={1} amount={5} />
+
 
       <Wrapper>
         <Content>
+          {/* <MenuMobile /> */}
           <Description>
             <img src={flavors} alt="Alimentos e frutas" />
             <div>

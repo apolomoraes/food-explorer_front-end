@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { AiOutlineMenu } from "react-icons/ai";
 
 export const Container = styled.div`
   grid-area: header;
@@ -19,6 +20,10 @@ export const Menu = styled.div`
   align-items: center;
   text-align: center;
   padding: 0 2.8rem 0 2.8rem;
+
+  a {
+    color: ${({ theme }) => theme.COLORS.WHITE};
+  }
 
   .mobile {
     background: none;
@@ -59,6 +64,18 @@ export const Menu = styled.div`
   }
 `;
 
+export const Open = styled(AiOutlineMenu)`
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: rotate(180deg);
+  }
+
+  @media(min-width: 1024px) {
+    display: none;
+  }
+`
+
 export const Desktop = styled.div`
   display: none;
 
@@ -74,6 +91,7 @@ export const Desktop = styled.div`
       gap: .8rem;
 
       width: 21.6rem;
+      height: 4.8rem;
       padding: 1.2rem 3.2rem;
     
       justify-content: center;

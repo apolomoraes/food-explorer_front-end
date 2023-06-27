@@ -1,15 +1,17 @@
-import { AiOutlineMenu, AiOutlineSearch } from "react-icons/ai";
+import { AiOutlineSearch } from "react-icons/ai";
 import { BsReceiptCutoff } from "react-icons/bs";
 import { RxExit } from "react-icons/rx";
 import { Logo } from "../Logo";
-import { Container, Menu, Desktop, Search } from "./styles";
+import { Container, Menu, Desktop, Search, Open } from "./styles";
 
-export function Header() {
+export function Header({ isAdmin, amount }) {
 
   return (
-    <Container>
+    <Container isadmin={isAdmin ? 1 : 0}>
       <Menu>
-        <AiOutlineMenu size={24} />
+        <a href="#">
+          <Open size={24} />
+        </a>
         <Logo width={"40px"} height={"40px"} fontSize={"2.2rem"} display={"none"} isAdmin />
 
         <button type="button" className="mobile">
@@ -24,8 +26,10 @@ export function Header() {
 
         <Desktop>
           <button type="button">
-            <BsReceiptCutoff size={24} />
-            <p>Pedidos <span>(0)</span></p>
+            {!isAdmin && <BsReceiptCutoff size={24} />}
+            {
+              isAdmin ? <p>Novo Prato</p> : <p>Pedidos <span>({amount})</span></p>
+            }
           </button>
 
           <a href="">
