@@ -23,15 +23,11 @@ export const Content = styled.div`
   margin: 3.6rem 0 1.6rem 0;
   padding: 0 5.6rem;
 
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  > div:nth-child(1) {
-    display: flex;
-    flex-direction: column;
-  }
 
    a {
     display: flex;
@@ -103,7 +99,6 @@ export const Amount = styled.div`
   width: 100%;
 
   div {
-    display: flex;
     align-items: center;
     gap: 1.4rem;
     margin: 1.2rem 0 1.6rem 0;
@@ -129,9 +124,11 @@ export const Purchase = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;
+
+    height: 4.8rem;
     
     width: 100%;
-    padding: .8rem 1.6rem;
+    padding: 1.2rem 2.4rem;
     gap: .5rem;
     border-radius: .3rem;
 
@@ -160,5 +157,5 @@ export const Purchase = styled.button`
 export const Description = styled.div`
   display: flex;
   flex-direction: column;
-
+  align-items: center;
 `

@@ -21,9 +21,18 @@ export const Container = styled.div`
     align-self: flex-end;
     border: none;
     background-color: transparent;
+    display: ${({ isAdmin }) => isAdmin ? 'none' : 'flex'};
 
     svg{
       fill: ${({ theme, isclicked }) => isclicked ? theme.COLORS.RED : theme.COLORS.WHITE};
+    }
+  }
+
+  .admin {
+    align-self: flex-end;
+    
+    svg{
+      fill: ${({ theme }) => theme.COLORS.WHITE};
     }
   }
 `

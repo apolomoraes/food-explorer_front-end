@@ -34,7 +34,7 @@ export function Home() {
 
           <Menu>
             <Section title="Refeições">
-              <Card image={prate} value="47,99" plateName="Salada Ravanello" />
+              <Card image={prate} value="47,99" plateName="Salada Ravanello" isAdmin />
               <Card image={prate} value="47,99" plateName="Salada Ravanello" />
             </Section>
 

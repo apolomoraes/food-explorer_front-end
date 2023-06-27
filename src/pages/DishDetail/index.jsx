@@ -2,11 +2,11 @@ import { Container, Content, Wrapper, Ingredients, Amount, Purchase, Description
 import { useState } from "react";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
-import { Button } from "../../components/Button";
 import { Ingredient } from "../../components/Ingredient";
 import { IoIosArrowBack } from "react-icons/io";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { CiReceipt } from "react-icons/ci";
+import { BsPencil } from "react-icons/bs";
 import prate from "../../assets/prate.png";
 
 
@@ -21,19 +21,19 @@ export function DishDetail() {
     if (amount > 0) setAmount(amount - 1);
   };
 
+  const isAdmin = true
   return (
     <Container>
       <Header />
 
       <Wrapper>
         <Content>
-          <div>
-            <a href="">
-              <IoIosArrowBack size={24} />
-              voltar
-            </a>
-            <img src={prate} alt="imagem do prato"/*{`Imagem do prato/lanche ${plateName}`}*/ />
-          </div>
+          <a href="">
+            <IoIosArrowBack size={24} />
+            voltar
+          </a>
+
+          <img src={prate} alt="imagem do prato"/*{`Imagem do prato/lanche ${plateName}`}*/ />
 
           <Description>
             <h2>Salada Ravanello</h2>
@@ -50,7 +50,7 @@ export function DishDetail() {
             </Ingredients>
 
             <Amount>
-              <div>
+              <div style={{ display: isAdmin ? 'none' : 'flex' }}>
                 <button className="decrement" onClick={decrement}>
                   <AiOutlineMinus size={27} />
                 </button>
@@ -60,15 +60,15 @@ export function DishDetail() {
                 </button>
               </div>
               <Purchase>
-                <CiReceipt size={32} />
-                <span>Incluir - R$ 25,00</span>
+                {!isAdmin && <CiReceipt size={32} />}
+                <span>{isAdmin ? 'Editar Prato' : 'Incluir - R$ 25,00'}</span>
               </Purchase>
             </Amount>
           </Description>
         </Content>
 
-        <Footer />
       </Wrapper>
+      <Footer />
     </Container>
   )
 }

@@ -1,10 +1,10 @@
 import { Container, Amount, PlateName, Value, Description } from "./styles";
 import { Button } from '../../components/Button';
 import { AiOutlinePlus, AiOutlineHeart, AiFillHeart, AiOutlineMinus } from "react-icons/ai";
-import { BsArrowRightShort } from "react-icons/bs";
+import { BsArrowRightShort, BsPencil } from "react-icons/bs";
 import { useState } from "react";
 
-export function Card({ plateName, value, image }) {
+export function Card({ plateName, value, image, isAdmin }) {
   const [amount, setAmount] = useState(0);
   const [isClicked, setIsClicked] = useState(false);
 
@@ -21,10 +21,17 @@ export function Card({ plateName, value, image }) {
   };
 
   return (
-    <Container isclicked={isClicked ? 1 : 0}>
+    <Container isclicked={isClicked ? 1 : 0} isadmin={isAdmin ? 1 : 0}>
       <button onClick={handleClick} className="favorite">
         {isClicked ? <AiFillHeart size={24} /> : <AiOutlineHeart size={24} />}
       </button>
+
+      {
+        isAdmin &&
+        <a className="admin" href="#">
+          <BsPencil size={24} />
+        </a>
+      }
 
       <img src={image} alt={`Imagem do prato/lanche ${plateName}`} />
 

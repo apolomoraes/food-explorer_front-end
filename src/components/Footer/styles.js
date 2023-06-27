@@ -16,6 +16,8 @@ export const Container = styled.div`
 
   margin-top: 2.4rem;
 
+  align-self: flex-end;
+
   span {
     font-size: clamp(1.2rem, 0.693rem + 0.213vw, 1.4rem);
     font-family: ${({ theme }) => theme.FONT.FONT_DM};
