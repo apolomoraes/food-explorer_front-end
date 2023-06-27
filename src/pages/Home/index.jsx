@@ -36,18 +36,18 @@ export function Home() {
 
           <Menu>
             <Section title="Refeições">
-              <Card image={prate} value="47,99" plateName="Salada Ravanello" isAdmin />
-              <Card image={prate} value="47,99" plateName="Salada Ravanello" />
+              <Card image={prate} value="47,99" plateName="Salada Ravanello" isAdmin={true} />
+              <Card image={prate} value="47,99" plateName="Salada Ravanello" isAdmin={true} />
             </Section>
 
             <Section title="Pratos principais">
-              <Card image={prate} value="47,99" plateName="Salada Ravanello" />
-              <Card image={prate} value="47,99" plateName="Salada Ravanello" />
+              <Card image={prate} value="47,99" plateName="Salada Ravanello" isAdmin={true} />
+              <Card image={prate} value="47,99" plateName="Salada Ravanello" isAdmin={true} />
             </Section>
 
             <Section title="Sobremesas">
-              <Card image={prate} value="47,99" plateName="Salada Ravanello" />
-              <Card image={prate} value="47,99" plateName="Salada Ravanello" />
+              <Card image={prate} value="47,99" plateName="Salada Ravanello" isAdmin={true} />
+              <Card image={prate} value="47,99" plateName="Salada Ravanello" isAdmin={true} />
             </Section>
           </Menu>
         </Content>

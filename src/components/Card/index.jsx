@@ -22,14 +22,16 @@ export function Card({ plateName, value, image, isAdmin }) {
 
   return (
     <Container isclicked={isClicked ? 1 : 0} isadmin={isAdmin ? 1 : 0}>
-      <button onClick={handleClick} className="favorite">
-        {isClicked ? <AiFillHeart size={24} /> : <AiOutlineHeart size={24} />}
-      </button>
+      {!isAdmin &&
+        <button onClick={handleClick} className="favorite">
+          {isClicked ? <AiFillHeart size={24} /> : <AiOutlineHeart size={24} />}
+        </button>
+      }
 
       {
         isAdmin &&
         <a className="admin" href="#">
-          <BsPencil size={24} />
+          <BsPencil size={22} />
         </a>
       }
 
