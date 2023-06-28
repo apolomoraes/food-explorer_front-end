@@ -25,8 +25,19 @@ export const Field = styled.div`
   padding: 1.2rem 1.4rem;
 
 
-  background: ${({ theme }) => theme.COLORS.BACKGROUND_700};
+  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_500};
+
   border-radius: 8px;
+
+  &:input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    
+  }
+
+  &:input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+}
 
   > input {
   width: 100%;

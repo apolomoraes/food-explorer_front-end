@@ -39,7 +39,8 @@ export const Field = styled.div`
     color: ${({ theme }) => theme.COLORS.WHITE};
   }
 
-  background: ${({ theme }) => theme.COLORS.BACKGROUND_700};
+  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_500};
+
   border-radius: 8px;
 
   >input {
