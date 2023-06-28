@@ -29,15 +29,7 @@ export const Field = styled.div`
 
   border-radius: 8px;
 
-  &:input[type=number]::-webkit-inner-spin-button { 
-    -webkit-appearance: none;
-    
-  }
-
-  &:input[type=number] { 
-   -moz-appearance: textfield;
-   appearance: textfield;
-}
+ 
 
   > input {
   width: 100%;
@@ -51,6 +43,15 @@ export const Field = styled.div`
 
   background: transparent;
   border: 0;
+
+  &::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    
+  }
+
+
+   -moz-appearance: textfield;
+   appearance: textfield;
 
   &:placeholder {
   color: ${({ theme }) => theme.COLORS.GRAY_500};

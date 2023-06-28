@@ -31,7 +31,7 @@ export const Container = styled.div`
 
     color: ${({ theme }) => theme.COLORS.WHITE};
 
-    &::placeholder {
+    &:placeholder {
       font-size: 1.6rem;
       font-family: ${({ theme }) => theme.FONT.FONT_ROBOTO};
       line-height: 100%;
