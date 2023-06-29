@@ -1,26 +1,18 @@
-import { Container, Content, Wrapper, Ingredients, Amount, Purchase, Description } from "./styles";
-import { useState } from "react";
+import { Container, Form, Content, Wrapper, Ingredients } from "./styles";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
-import { Ingredient } from "../../components/Ingredient";
-import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
-import { CiReceipt } from "react-icons/ci";
-import prate from "../../assets/prate.png";
 import { ButtonBack } from "../../components/ButtonBack";
+import { Input } from "../../components/Input";
+import { InputFile } from "../../components/InputFile";
+import { BsUpload, BsCurrencyDollar } from "react-icons/bs";
+import { GiKnifeFork } from "react-icons/gi";
+import { useState } from "react";
+import { Select } from "../../components/Select";
+import { Button } from "../../components/Button";
+import { IngredientTag } from "../../components/IngredientTag";
+import { Textarea } from "../../components/Textarea";
+export function EditDish() {
 
-
-export function DishDetail() {
-  const [amount, setAmount] = useState(0);
-
-  function increment() {
-    if (amount >= 0) setAmount(amount + 1);
-  };
-
-  function decrement() {
-    if (amount > 0) setAmount(amount - 1);
-  };
-
-  const isAdmin = true
   return (
     <Container>
       <Header />
@@ -28,45 +20,43 @@ export function DishDetail() {
       <Wrapper>
         <Content>
           <a href="#">
-            <ButtonBack fontSize="2.4rem" size="3.2rem" />
+            <ButtonBack fontSize="1.6rem" size="2.2rem" />
           </a>
 
-          <img src={prate} alt="imagem do prato"/*{`Imagem do prato/lanche ${plateName}`}*/ />
+          <h1>Editar Prato</h1>
 
-          <Description>
-            <h2>Salada Ravanello</h2>
+          <Form>
+            <div>
+              <InputFile icon={BsUpload} title="Imagem do prato" text="Selecione a imagem para alterá-la" id="image" />
+              <Input icon={GiKnifeFork} type="text" placeholder="Ex.: Feijão Tropeiro" title="Nome" id="name" />
+              <Select title="Categoria" />
+            </div>
 
-            <p>Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.</p>
+            <div>
+              <Ingredients>
+                <label htmlFor="ingredients" >Ingredientes</label>
+                <div>
+                  <IngredientTag placeholder="Adicionar" isNew id="ingredients" />
+                </div>
+              </Ingredients>
+              <Input
+                icon={BsCurrencyDollar}
+                type="number"
+                placeholder="R$ 00,00"
+                title="Preço"
+                id="price" />
+            </div>
+            <Textarea placeholder="Fale brevemente sobre o prato, seus ingredientes e composição" title="Descrição" id="description" />
 
-            <Ingredients>
-              <Ingredient title="alface" />
-              <Ingredient title="cebola" />
-              <Ingredient title="pepino" />
-              <Ingredient title="pepino" />
-              <Ingredient title="pepino" />
-              <Ingredient title="pepino" />
-            </Ingredients>
-
-            <Amount>
-              <div style={{ display: isAdmin ? 'none' : 'flex' }}>
-                <button className="decrement" onClick={decrement}>
-                  <AiOutlineMinus size={27} />
-                </button>
-                <span>{amount.toString().padStart(2, '0')}</span>
-                <button className="increment" onClick={increment}>
-                  <AiOutlinePlus size={27} />
-                </button>
-              </div>
-              <Purchase>
-                {!isAdmin && <CiReceipt size={32} />}
-                <span>{isAdmin ? 'Editar Prato' : 'Incluir - R$ 25,00'}</span>
-              </Purchase>
-            </Amount>
-          </Description>
+            <div>
+              <Button title={'Excluir prato'} background={'#0D161B'} />
+              <Button title={'Salvar alterações'} background={'#AB4D55'} />
+            </div>
+          </Form>
         </Content>
 
+        <Footer />
       </Wrapper>
-      <Footer />
     </Container>
   )
 }
