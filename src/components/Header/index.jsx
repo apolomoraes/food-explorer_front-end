@@ -4,7 +4,7 @@ import { RxExit } from "react-icons/rx";
 import { Logo } from "../Logo";
 import { Container, Menu, Desktop, Search, Open } from "./styles";
 
-export function Header({ isAdmin, amount }) {
+export function Header({ isAdmin }) {
 
   return (
     <Container isadmin={isAdmin ? 1 : 0}>
@@ -28,7 +28,7 @@ export function Header({ isAdmin, amount }) {
           <button type="button">
             {!isAdmin && <BsReceiptCutoff size={24} />}
             {
-              isAdmin ? <p>Novo Prato</p> : <p>Pedidos <span>({amount})</span></p>
+              isAdmin ? <p>Novo Prato</p> : <p>Pedidos <span>(5)</span></p>
             }
           </button>
 

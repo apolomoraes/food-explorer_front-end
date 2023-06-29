@@ -20,7 +20,7 @@ export function Home() {
 
   return (
     <Container>
-      <Header isAdmin={1} amount={5} />
+      <Header isAdmin={1} />
 
 
       <Wrapper>
