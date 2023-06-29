@@ -37,7 +37,7 @@ export const Container = styled.div`
 } */
 `
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.main`
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
