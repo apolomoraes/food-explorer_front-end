@@ -31,6 +31,10 @@ export const Content = styled.div`
     font-weight: 500;
     font-size: 3.2rem;
   }
+
+  @media(min-width: 1024px) {
+    padding: 2rem 10rem;
+  }
 `
 
 export const Form = styled.form`
@@ -39,6 +43,39 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
+
+  > div:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    }
+
+  > div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+
+  @media(min-width: 1024px) {
+    > div:nth-child(1) {
+      display: flex;
+      flex-direction: row;
+      gap: 3.2rem;
+      align-items: center;
+    }
+
+    > div:nth-child(2) {
+      display: flex;
+      flex-direction: row;
+      gap: 3.2rem;
+      align-items: center;
+    }
+
+    > div:nth-child(4) {
+      width: 20rem;
+      align-self: flex-end;
+    }
+  }
 `
 
 export const Ingredients = styled.div`
@@ -61,7 +98,12 @@ export const Ingredients = styled.div`
   padding: .4rem .8rem;
   gap: 1.6rem;
   border-radius: .8rem;
-
+  
   background: ${({ theme }) => theme.COLORS.BACKGROUND_500};
+  
+  @media(min-width: 1024px) {
+    height: 4.8rem;  
+    min-width: 87.3rem;
+  }
 }
 `
