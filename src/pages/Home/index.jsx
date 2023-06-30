@@ -20,7 +20,7 @@ export function Home() {
 
   return (
     <Container>
-      <Header isAdmin={1} />
+      <Header isAdmin={false} />
 
 
       <Wrapper>

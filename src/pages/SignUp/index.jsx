@@ -3,6 +3,7 @@ import { Button } from '../../components/Button';
 import { Input } from '../../components/Input';
 import { Logo } from '../../components/Logo';
 import { FiMail, FiLock, FiUser } from 'react-icons/fi';
+import { Link } from 'react-router-dom'
 
 
 export function SignUp() {
@@ -43,7 +44,7 @@ export function SignUp() {
 
           <Button title={'CRIAR CONTA'} background={'#750310'} />
 
-          <a href="">Já tenho uma conta</a>
+          <Link to="/">Já tenho uma conta</Link>
         </div>
       </Form>
     </Container>

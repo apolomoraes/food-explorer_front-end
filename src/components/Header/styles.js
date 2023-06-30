@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { AiOutlineMenu } from "react-icons/ai";
+import { Link } from "react-router-dom";
+
 
 export const Container = styled.div`
   grid-area: header;
@@ -101,6 +103,11 @@ export const Desktop = styled.div`
       color: ${({ theme }) => theme.COLORS.WHITE};
     
       border-radius: .5rem;
+
+      font-family: ${({ theme }) => theme.FONT.FONT_POPPINS};
+      font-size: 1.4rem;
+      font-weight: 500;
+      line-height: 2.4rem;
     }
 
     a {
@@ -149,4 +156,23 @@ export const Search = styled.div`
       }
     }
   }
+`
+
+export const New = styled(Link)`
+  width: 21.6rem;
+  height: 4.8rem;
+  padding: 1.2rem 3.2rem;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    
+  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_BUTTON_300};
+    
+  border-radius: .5rem;
+
+  font-family: ${({ theme }) => theme.FONT.FONT_POPPINS};
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 2.4rem;
 `
