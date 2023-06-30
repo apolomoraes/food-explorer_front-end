@@ -20,7 +20,7 @@ export function Home() {
 
   return (
     <Container>
-      <Header isAdmin={false} />
+      <Header isAdmin={true} />
 
 
       <Wrapper>
@@ -36,13 +36,13 @@ export function Home() {
 
           <Menu>
             <Section title="Refeições">
-              <Card image={prate} value="47,99" plateName="Salada Ravanello" isAdmin={true} />
-              <Card image={prate} value="47,99" plateName="Salada Ravanello" isAdmin={true} />
+              <Card image={prate} value="47,99" plateName="Salada Ravanello" isAdmin={true} id={1} />
+              <Card image={prate} value="47,99" plateName="Salada Ravanello" isAdmin={true} id={2} />
             </Section>
 
             <Section title="Pratos principais">
-              <Card image={prate} value="47,99" plateName="Salada Ravanello" isAdmin={true} />
-              <Card image={prate} value="47,99" plateName="Salada Ravanello" isAdmin={true} />
+              <Card image={prate} value="47,99" plateName="Salada Ravanello" isAdmin={true} id={3} />
+              <Card image={prate} value="47,99" plateName="Salada Ravanello" isAdmin={true} id={4} />
             </Section>
 
             <Section title="Sobremesas">

@@ -3,8 +3,9 @@ import { Button } from '../../components/Button';
 import { AiOutlinePlus, AiOutlineHeart, AiFillHeart, AiOutlineMinus } from "react-icons/ai";
 import { BsArrowRightShort, BsPencil } from "react-icons/bs";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
-export function Card({ plateName, value, image, isAdmin }) {
+export function Card({ plateName, value, image, isAdmin, id }) {
   const [amount, setAmount] = useState(0);
   const [isClicked, setIsClicked] = useState(false);
 
@@ -30,19 +31,19 @@ export function Card({ plateName, value, image, isAdmin }) {
 
       {
         isAdmin &&
-        <a className="admin" href="#">
+        <Link className="admin" to={`/edit/${id}`}>
           <BsPencil size={22} />
-        </a>
+        </Link>
       }
 
       <img src={image} alt={`Imagem do prato/lanche ${plateName}`} />
 
       <Description>
         <PlateName>
-          <p>{plateName}</p>
-          <button>
+          <Link to={`/details/${id}`}>
+            <p>{plateName}</p>
             <BsArrowRightShort size={24} />
-          </button>
+          </Link>
         </PlateName>
 
         <span>Rabanetes, folhas verdes e molho agridoce salpicados com gergelim</span>

@@ -41,7 +41,7 @@ export const Amount = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  
+  width: 100%;
   
   > div {
     display: flex;
@@ -80,7 +80,6 @@ export const Amount = styled.div`
 export const PlateName = styled.div`
   display: flex;
   align-items: center;
-  gap: .2rem;
   margin: 1.2rem 0 ;
 
   p {
@@ -93,7 +92,11 @@ export const PlateName = styled.div`
     line-height: 2.4rem;
   }
 
-  button {
+  a {
+    display: flex;
+    align-items: center;
+    gap: .2rem;
+    
     color: ${({ theme }) => theme.COLORS.GRAY_100};
     border: none;
     background: transparent;

@@ -7,6 +7,7 @@ import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { CiReceipt } from "react-icons/ci";
 import prate from "../../assets/prate.png";
 import { ButtonBack } from "../../components/ButtonBack";
+import { Link } from "react-router-dom";
 
 
 export function DishDetail() {
@@ -27,9 +28,9 @@ export function DishDetail() {
 
       <Wrapper>
         <Content>
-          <a href="#">
+          <Link to="/">
             <ButtonBack fontSize="2.4rem" size="3.2rem" />
-          </a>
+          </Link>
 
           <img src={prate} alt="imagem do prato"/*{`Imagem do prato/lanche ${plateName}`}*/ />
 
@@ -57,7 +58,7 @@ export function DishDetail() {
                   <AiOutlinePlus size={27} />
                 </button>
               </div>
-              <Purchase>
+              <Purchase to="/edit/1">
                 {!isAdmin && <CiReceipt size={32} />}
                 <span>{isAdmin ? 'Editar Prato' : 'Incluir - R$ 25,00'}</span>
               </Purchase>

@@ -3,6 +3,7 @@ import { BsReceiptCutoff } from "react-icons/bs";
 import { RxExit } from "react-icons/rx";
 import { Logo } from "../Logo";
 import { Container, Menu, Desktop, Search, Open, New } from "./styles";
+import { Link } from "react-router-dom";
 
 export function Header({ isAdmin }) {
 
@@ -31,21 +32,22 @@ export function Header({ isAdmin }) {
                 <BsReceiptCutoff size={24} />
                 <p>Pedidos <span>(5)</span></p>
               </button>
-            </>}
+            </>
+          }
 
           {isAdmin &&
             <>
-              <New to="/">
+              <New to="/add">
                 Novo Prato
               </New>
             </>
           }
 
-          <a href="">
+          <Link to="/">
             <RxExit size={24} />
-          </a>
+          </Link>
         </Desktop>
       </Menu>
-    </Container>
+    </Container >
   )
 }

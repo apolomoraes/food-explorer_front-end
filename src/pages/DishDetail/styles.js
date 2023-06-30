@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Wrapper } from '../Home/styles';
+import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
   min-width: 30rem;
@@ -50,7 +51,6 @@ export const Content = styled.div`
   }
 
   p {
-    text-align: center;
     font-size: clamp(1.6rem, 0.772rem + 0.851vw, 2.4rem);
     font-family: ${({ theme }) => theme.FONT.FONT_POPPINS};
     line-height: 140%;
@@ -59,7 +59,7 @@ export const Content = styled.div`
   @media(min-width: 1024px) {
     flex-direction: row;
     gap: 4.7rem;
-    align-items: center;
+    /* align-items: flex-start; */
     padding: 0 12.1rem;
 
     img {
@@ -111,7 +111,7 @@ export const Amount = styled.div`
   }
 `
 
-export const Purchase = styled.button`
+export const Purchase = styled(Link)`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -148,5 +148,5 @@ export const Purchase = styled.button`
 export const Description = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 `

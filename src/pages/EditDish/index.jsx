@@ -11,6 +11,7 @@ import { Select } from "../../components/Select";
 import { Button } from "../../components/Button";
 import { IngredientTag } from "../../components/IngredientTag";
 import { Textarea } from "../../components/Textarea";
+import { Link } from "react-router-dom";
 export function EditDish() {
 
   return (
@@ -19,9 +20,9 @@ export function EditDish() {
 
       <Wrapper>
         <Content>
-          <a href="#">
+          <Link to="/">
             <ButtonBack fontSize="1.6rem" size="2.2rem" />
-          </a>
+          </Link>
 
           <h1>Editar Prato</h1>
 

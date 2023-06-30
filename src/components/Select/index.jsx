@@ -10,6 +10,7 @@ export function Select({ title, ...rest }) {
           <option value="refeições" >Refeição</option>
           <option value="pratos_principais" >Pratos Principais</option>
           <option value="sobremesa">Sobremesas</option>
+          <option value="drink">Bebidas</option>
         </select>
         <BsChevronDown size={24} />
       </Field>
