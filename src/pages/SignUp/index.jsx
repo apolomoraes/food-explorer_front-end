@@ -5,12 +5,18 @@ import { Logo } from '../../components/Logo';
 import { FiMail, FiLock, FiUser } from 'react-icons/fi';
 import { Link } from 'react-router-dom'
 import { useState } from 'react';
+import { toastUtils } from '../../components/Toast';
 import { Loading } from '../../components/Loading';
 
 export function SignUp() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showLoading, setShowLoading] = useState(false);
+
+  function handleSignUp() {
+    return toastUtils.handleError("Preencha todos os campos");
+  }
 
   return (
     <Container>
@@ -47,12 +53,12 @@ export function SignUp() {
             />
           </div>
 
-          <Button title={'CRIAR CONTA'} background={'#750310'} />
+          <Button title={'CRIAR CONTA'} background={'#750310'} onClick={handleSignUp} />
 
           <Link to="/">Já tenho uma conta</Link>
         </div>
       </Form>
-      <Loading />
+      {/* {showLoading && <Loading />} */}
     </Container>
   )
 }
