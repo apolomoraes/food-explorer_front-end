@@ -5,6 +5,7 @@ import { ToastContainer } from 'react-toastify';
 import theme from './styles/theme';
 import GlobalStyles from './styles/global';
 import { Routes } from './routes';
+import { MyContext } from './myContext';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -13,7 +14,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <ToastContainer
         pauseOnFocusLoss={false}
       />
-      <Routes />
+      <MyContext.Provider value={{}}>
+        <Routes />
+      </MyContext.Provider>
     </ThemeProvider>
   </React.StrictMode>
 )

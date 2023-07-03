@@ -3,10 +3,11 @@ import { Button } from '../../components/Button';
 import { Input } from '../../components/Input';
 import { Logo } from '../../components/Logo';
 import { FiMail, FiLock, FiUser } from 'react-icons/fi';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react';
 import { toastUtils } from '../../components/Toast';
 import { Loading } from '../../components/Loading';
+import { api } from '../../services/api';
 
 export function SignUp() {
   const [name, setName] = useState('');
@@ -14,8 +15,27 @@ export function SignUp() {
   const [password, setPassword] = useState('');
   const [showLoading, setShowLoading] = useState(false);
 
+  const navigate = useNavigate();
+
   function handleSignUp() {
-    return toastUtils.handleError("Preencha todos os campos");
+    if (!name || !email || !password) return toastUtils.handleError("Preencha todos os campos");
+    if (password.length < 6) return toastUtils.handleError("A senha deve ter pelo menos 6 caracteres");
+
+    setShowLoading(true);
+    api.post("/users", { name, email, password })
+      .then(() => {
+        setShowLoading(false);
+        toastUtils.handleSuccess("Conta criada com sucesso");
+        navigate("/");
+      })
+      .catch(error => {
+        setShowLoading(false);
+        if (error.response) {
+          toastUtils.handleError(error.response.data.message);
+        } else {
+          toastUtils.handleError("Não foi possível criar a conta, tente novamente mais tarde");
+        }
+      })
   }
 
   return (
@@ -34,6 +54,7 @@ export function SignUp() {
               id={'name'}
               title={'Seu nome'}
               icon={FiUser}
+              onChange={e => setName(e.target.value)}
             />
 
             <Input
@@ -42,6 +63,7 @@ export function SignUp() {
               id={'email'}
               title={'Email'}
               icon={FiMail}
+              onChange={e => setEmail(e.target.value)}
             />
 
             <Input
@@ -50,6 +72,7 @@ export function SignUp() {
               id={'password'}
               title={'Senha'}
               icon={FiLock}
+              onChange={e => setPassword(e.target.value)}
             />
           </div>
 
@@ -58,7 +81,7 @@ export function SignUp() {
           <Link to="/">Já tenho uma conta</Link>
         </div>
       </Form>
-      {/* {showLoading && <Loading />} */}
+      {showLoading && <Loading />}
     </Container>
   )
 }
