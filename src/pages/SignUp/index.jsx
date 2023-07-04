@@ -72,6 +72,7 @@ export function SignUp() {
               id={'password'}
               title={'Senha'}
               icon={FiLock}
+              autoComplete="on"
               onChange={e => setPassword(e.target.value)}
             />
           </div>

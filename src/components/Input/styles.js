@@ -41,17 +41,22 @@ export const Field = styled.div`
 
   color: ${({ theme }) => theme.COLORS.WHITE};
 
-  background: transparent;
+  background-color: transparent;
   border: 0;
 
   &::-webkit-inner-spin-button { 
     -webkit-appearance: none;
-    
   }
-
-
    -moz-appearance: textfield;
    appearance: textfield;
+
+   &:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px #0D161B inset;
+  }
+
+  &:-webkit-autofill {
+    -webkit-text-fill-color: #FFFFFF;
+  }
 
   &:placeholder {
   color: ${({ theme }) => theme.COLORS.GRAY_500};

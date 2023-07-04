@@ -12,6 +12,9 @@ const configuration = {
 };
 
 export const toastUtils = {
+  handleDefault: (message) => {
+    toast(message, configuration);
+  },
   handleError: (message) => {
     toast.error(message, configuration);
   },
