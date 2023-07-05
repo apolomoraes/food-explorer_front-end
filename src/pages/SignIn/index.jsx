@@ -1,6 +1,6 @@
 import { Container, Form } from './styles';
 import { Button } from '../../components/Button';
-import { Input } from '../../components/Input';
+import { Teste } from '../../components/Teste';
 import { Logo } from '../../components/Logo';
 import { Link } from 'react-router-dom'
 import { FiMail, FiLock } from 'react-icons/fi';
@@ -30,7 +30,7 @@ export function SignIn() {
         <div className="wrapper">
           <h1>Faça login</h1>
           <div className='inputs'>
-            <Input
+            <Teste
               type='email'
               placeholder='Exemplo: exemplo@exemplo.com.br'
               id={'email'}
@@ -38,7 +38,7 @@ export function SignIn() {
               icon={FiMail}
               onChange={e => setEmail(e.target.value)}
             />
-            <Input
+            <Teste
               type='password'
               placeholder='No mínimo 6 caracteres'
               id={'password'}
