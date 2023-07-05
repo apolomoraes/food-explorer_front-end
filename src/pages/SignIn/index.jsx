@@ -13,26 +13,13 @@ export function SignIn() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const { signIn, showLoading, user } = useAuth();
-
-  const greetingMessage = () => {
-    const isAdmin = user && user.admin ? 1 : 0;
-    let hour = new Date().getHours();
-    switch (true) {
-      case hour <= 5: return !isAdmin ? '👋 Boa madrugada!' : '👋 Boa madrugada! Bom trabalho';
-      case hour < 12: return !isAdmin ? '👋 Bom dia!' : '👋 Bom dia! Bom trabalho';
-      case hour < 18: return !isAdmin ? '👋 Boa tarde!' : '👋 Boa tarde! Bom trabalho';
-      default: return !isAdmin ? '👋 Boa noite!' : '👋 Boa noite! Bom trabalho';
-    }
-  }
+  const { signIn, showLoading } = useAuth();
 
   function handleSignIn() {
     if (!email || !password) return toastUtils.handleError("Preencha todos os campos");
 
     signIn({ email, password })
-    toastUtils.handleDefault(greetingMessage);
   }
-
   return (
     <Container>
       <Form>

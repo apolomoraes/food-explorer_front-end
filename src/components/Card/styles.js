@@ -21,7 +21,7 @@ export const Container = styled.div`
     align-self: flex-end;
     border: none;
     background-color: transparent;
-    display: ${({ isAdmin }) => isAdmin ? 'none' : 'flex'};
+    display: ${({ admin }) => admin ? 'none' : 'flex'};
 
     svg{
       fill: ${({ theme, isclicked }) => isclicked ? theme.COLORS.RED : theme.COLORS.WHITE};
@@ -38,7 +38,7 @@ export const Container = styled.div`
 `
 
 export const Amount = styled.div`
-  display: flex;
+  display: ${({ admin }) => admin ? 'none' : 'flex'};
   align-items: center;
   flex-direction: column;
   width: 100%;

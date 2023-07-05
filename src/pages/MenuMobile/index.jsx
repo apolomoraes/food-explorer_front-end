@@ -2,6 +2,7 @@ import { Container, Header, Content, Search, Close } from "./styles"
 import { AiOutlineSearch } from "react-icons/ai";
 import { Footer } from "../../components/Footer";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export function MenuMobile() {
   const [active, setActive] = useState(false);
@@ -14,10 +15,10 @@ export function MenuMobile() {
   return (
     <Container>
       <Header onClick={toggleMode}>
-        <a href="#">
+        <Link to="/">
           <Close size={28} />
-          <span>Menu</span>
-        </a>
+        </Link>
+        <span>Menu</span>
       </Header>
 
 

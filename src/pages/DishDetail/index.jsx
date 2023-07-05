@@ -8,6 +8,7 @@ import { CiReceipt } from "react-icons/ci";
 import prate from "../../assets/prate.png";
 import { ButtonBack } from "../../components/ButtonBack";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../hooks/auth";
 
 
 export function DishDetail() {
@@ -21,7 +22,8 @@ export function DishDetail() {
     if (amount > 0) setAmount(amount - 1);
   };
 
-  const isAdmin = true
+  const { user } = useAuth();
+  const isAdmin = user && user.admin ? 1 : 0;
   return (
     <Container>
       <Header />

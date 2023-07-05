@@ -42,22 +42,18 @@ export const Header = styled.div`
   align-items: center;
 
   padding-left: 2.8rem;
-  
-  > a {
-    display: flex;
-    align-items: center;
-    gap: 1.6rem;
+  gap: 1.6rem;
 
-
-    svg {
-    color: ${({ theme }) => theme.COLORS.WHITE};
-    }
-
-    span {
+  span {
     font-size: 2.1rem;
     font-family: ${({ theme }) => theme.FONT.FONT_ROBOTO};
     color: ${({ theme }) => theme.COLORS.GRAY_100};
    }
+  
+  > a {
+    svg {
+    color: ${({ theme }) => theme.COLORS.WHITE};
+    }
   }
 `
 

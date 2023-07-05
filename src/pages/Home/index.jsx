@@ -7,21 +7,17 @@ import { Section } from "../../components/Section";
 import Slider from "../../components/Slider";
 import { SwiperSlide } from "swiper/react";
 import { Footer } from "../../components/Footer";
+import { useAuth } from "../../hooks/auth";
 
 
 
 export function Home() {
-  // const settings = {
-  //   spaceBetween: 70,
-  //   slidesPerView: 3,
-  //   navigation: true,
-  //   loop: true,
-  // }
+  const { user } = useAuth();
+  const isAdmin = user && user.admin ? true : false;
 
   return (
     <Container>
-      <Header isAdmin={true} />
-
+      <Header admin={isAdmin} />
 
       <Wrapper>
         <Content>
@@ -36,18 +32,18 @@ export function Home() {
 
           <Menu>
             <Section title="Refeições">
-              <Card image={prate} value="47,99" plateName="Salada Ravanello" isAdmin={true} id={1} />
-              <Card image={prate} value="47,99" plateName="Salada Ravanello" isAdmin={true} id={2} />
+              <Card image={prate} value="47,99" plateName="Salada Ravanello" admin={isAdmin} id={1} />
+              <Card image={prate} value="47,99" plateName="Salada Ravanello" admin={isAdmin} id={2} />
             </Section>
 
             <Section title="Pratos principais">
-              <Card image={prate} value="47,99" plateName="Salada Ravanello" isAdmin={true} id={3} />
-              <Card image={prate} value="47,99" plateName="Salada Ravanello" isAdmin={true} id={4} />
+              <Card image={prate} value="47,99" plateName="Salada Ravanello" admin={isAdmin} id={3} />
+              <Card image={prate} value="47,99" plateName="Salada Ravanello" admin={isAdmin} id={4} />
             </Section>
 
             <Section title="Sobremesas">
-              <Card image={prate} value="47,99" plateName="Salada Ravanello" isAdmin={true} />
-              <Card image={prate} value="47,99" plateName="Salada Ravanello" isAdmin={true} />
+              <Card image={prate} value="47,99" plateName="Salada Ravanello" admin={isAdmin} />
+              <Card image={prate} value="47,99" plateName="Salada Ravanello" admin={isAdmin} />
             </Section>
           </Menu>
         </Content>

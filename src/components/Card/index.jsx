@@ -5,7 +5,7 @@ import { BsArrowRightShort, BsPencil } from "react-icons/bs";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-export function Card({ plateName, value, image, isAdmin, id }) {
+export function Card({ plateName, value, image, admin, id }) {
   const [amount, setAmount] = useState(0);
   const [isClicked, setIsClicked] = useState(false);
 
@@ -22,15 +22,15 @@ export function Card({ plateName, value, image, isAdmin, id }) {
   };
 
   return (
-    <Container isclicked={isClicked ? 1 : 0} isadmin={isAdmin ? 1 : 0}>
-      {!isAdmin &&
+    <Container isclicked={isClicked ? 1 : 0} admin={admin ? 1 : 0}>
+      {!admin &&
         <button onClick={handleClick} className="favorite">
           {isClicked ? <AiFillHeart size={24} /> : <AiOutlineHeart size={24} />}
         </button>
       }
 
       {
-        isAdmin &&
+        admin &&
         <Link className="admin" to={`/edit/${id}`}>
           <BsPencil size={22} />
         </Link>
@@ -51,7 +51,7 @@ export function Card({ plateName, value, image, isAdmin, id }) {
 
       <Value>R$ {value}</Value>
 
-      <Amount>
+      <Amount admin={admin ? 1 : 0}>
         <div>
           <button className="decrement" onClick={decrement}>
             <AiOutlineMinus size={24} />

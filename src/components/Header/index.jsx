@@ -5,15 +5,16 @@ import { Logo } from "../Logo";
 import { Container, Menu, Desktop, Search, Open, New } from "./styles";
 import { Link } from "react-router-dom";
 
-export function Header({ isAdmin }) {
+export function Header({ admin }) {
+
 
   return (
-    <Container isadmin={isAdmin ? 1 : 0}>
+    <Container admin={admin ? 1 : 0}>
       <Menu>
-        <a href="#">
+        <Link to="/menu">
           <Open size={24} />
-        </a>
-        <Logo width={"40px"} height={"40px"} fontSize={"2.2rem"} display={"none"} isAdmin />
+        </Link>
+        <Logo width={"40px"} height={"40px"} fontSize={"2.2rem"} display={"none"} admin />
 
         <button type="button" className="mobile">
           <BsReceiptCutoff size={24} />
@@ -26,7 +27,7 @@ export function Header({ isAdmin }) {
         </Search>
 
         <Desktop>
-          {!isAdmin &&
+          {!admin &&
             <>
               <button type="button">
                 <BsReceiptCutoff size={24} />
@@ -35,7 +36,7 @@ export function Header({ isAdmin }) {
             </>
           }
 
-          {isAdmin &&
+          {admin &&
             <>
               <New to="/add">
                 Novo Prato
