@@ -6,11 +6,12 @@ export function Select({ title, ...rest }) {
     <Container>
       <label>{title}</label>
       <Field>
-        <select name="category" required defaultValue={'refeições'}>
-          <option value="refeições" >Refeição</option>
-          <option value="pratos_principais" >Pratos Principais</option>
-          <option value="sobremesa">Sobremesas</option>
-          <option value="drink">Bebidas</option>
+        <select name="category" required defaultValue='meals' {...rest}>
+          <option value="meals" >Refeições</option>
+          <option value="main" >Pratos Principais</option>
+          <option value="dessert">Sobremesas</option>
+          <option value="drinks">Bebidas</option>
+          <option value="snacks">Lanches</option>
         </select>
         <BsChevronDown size={24} />
       </Field>

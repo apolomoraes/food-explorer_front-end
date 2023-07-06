@@ -2,19 +2,21 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { BsReceiptCutoff } from "react-icons/bs";
 import { RxExit } from "react-icons/rx";
 import { Logo } from "../Logo";
-import { Container, Menu, Desktop, Search, Open, New } from "./styles";
+import { Container, Menu, Desktop, Search, Open, New, Logout } from "./styles";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../hooks/auth";
 
-export function Header({ admin }) {
-
+export function Header() {
+  const { user, signOut } = useAuth();
+  const isAdmin = user && user.admin ? 1 : 0;
 
   return (
-    <Container admin={admin ? 1 : 0}>
+    <Container>
       <Menu>
         <Link to="/menu">
           <Open size={24} />
         </Link>
-        <Logo width={"40px"} height={"40px"} fontSize={"2.2rem"} display={"none"} admin />
+        <Logo width={"40px"} height={"40px"} fontSize={"2.2rem"} display={"none"} isAdmin />
 
         <button type="button" className="mobile">
           <BsReceiptCutoff size={24} />
@@ -23,11 +25,11 @@ export function Header({ admin }) {
 
         <Search>
           <AiOutlineSearch size={24} />
-          <input type="text" placeholder="Busque por pratos ou ingredientes" />
+          <input type="search" placeholder="Busque por pratos ou ingredientes" />
         </Search>
 
         <Desktop>
-          {!admin &&
+          {!isAdmin &&
             <>
               <button type="button">
                 <BsReceiptCutoff size={24} />
@@ -36,7 +38,7 @@ export function Header({ admin }) {
             </>
           }
 
-          {admin &&
+          {isAdmin &&
             <>
               <New to="/add">
                 Novo Prato
@@ -44,9 +46,9 @@ export function Header({ admin }) {
             </>
           }
 
-          <Link to="/">
+          <Logout onClick={signOut}>
             <RxExit size={24} />
-          </Link>
+          </Logout>
         </Desktop>
       </Menu>
     </Container >

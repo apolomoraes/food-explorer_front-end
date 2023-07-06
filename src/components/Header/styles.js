@@ -86,7 +86,7 @@ export const Desktop = styled.div`
     gap: 3.2rem;
     align-items: center;
 
-    button {
+    > button:nth-child(1) {
       border: none;
       
       display: flex;
@@ -108,10 +108,6 @@ export const Desktop = styled.div`
       font-size: 1.4rem;
       font-weight: 500;
       line-height: 2.4rem;
-    }
-
-    a {
-      color: ${({ theme }) => theme.COLORS.WHITE};
     }
   }
 `
@@ -175,4 +171,13 @@ export const New = styled(Link)`
   font-size: 1.4rem;
   font-weight: 500;
   line-height: 2.4rem;
+`
+
+export const Logout = styled.button`
+  border: none;
+  background: transparent;
+
+  svg {
+  color: ${({ theme }) => theme.COLORS.WHITE};
+  }
 `

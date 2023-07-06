@@ -9,6 +9,7 @@ function AuthProvider({ children }) {
   const [data, setData] = useState({});
   const [showLoading, setShowLoading] = useState(false);
 
+
   function encryptData(data, key) {
     const encryptedData = AES.encrypt(JSON.stringify(data), key).toString();
     return encryptedData;
@@ -33,11 +34,11 @@ function AuthProvider({ children }) {
       localStorage.setItem("@foodexplorer:user", encryptedUserData);
       localStorage.setItem("@foodexplorer:token", encryptedToken);
 
-      api.defaults.headers.authorization = `Bearer ${token}`;
+      api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
       setData({ token, user });
 
-      setShowLoading(false);
 
+      setShowLoading(false);
       const greetingMessage = () => {
         const isAdmin = user && user.admin ? 1 : 0;
         let hour = new Date().getHours();
@@ -60,6 +61,13 @@ function AuthProvider({ children }) {
     }
   }
 
+  function signOut() {
+    localStorage.removeItem("@foodexplorer:user");
+    localStorage.removeItem("@foodexplorer:token");
+
+    setData({});
+  }
+
   useEffect(() => {
     const encryptedUserData = localStorage.getItem("@foodexplorer:user");
     const encryptedTokenData = localStorage.getItem("@foodexplorer:token");
@@ -69,7 +77,7 @@ function AuthProvider({ children }) {
       const token = decryptData(encryptedTokenData, encryptionKey);
 
       if (user && token) {
-        api.defaults.headers.authorization = `Bearer ${token}`;
+        api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 
         setData({
           token,
@@ -80,7 +88,13 @@ function AuthProvider({ children }) {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ signIn, showLoading, user: data.user }}>
+    <AuthContext.Provider
+      value={{
+        signIn,
+        signOut,
+        showLoading,
+        user: data.user
+      }}>
       {children}
     </AuthContext.Provider>
   );
