@@ -1,11 +1,13 @@
-import { Container, Amount, PlateName, Value, Description } from "./styles";
+import { Container, Amount, DishName, Value, Description } from "./styles";
 import { Button } from '../../components/Button';
 import { AiOutlinePlus, AiOutlineHeart, AiFillHeart, AiOutlineMinus } from "react-icons/ai";
 import { BsArrowRightShort, BsPencil } from "react-icons/bs";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { api } from "../../services/api";
+import imagePlaceHolder from "../../assets/imagePlaceHolder.png";
 
-export function Card({ plateName, value, image, admin, id }) {
+export function Card({ data, admin }) {
   const [amount, setAmount] = useState(0);
   const [isClicked, setIsClicked] = useState(false);
 
@@ -21,6 +23,8 @@ export function Card({ plateName, value, image, admin, id }) {
     setIsClicked(!isClicked);
   };
 
+  const dishImage = data.image ? `${api.defaults.baseURL}/files/${data.image}` : imagePlaceHolder;
+
   return (
     <Container isclicked={isClicked ? 1 : 0} admin={admin ? 1 : 0}>
       {!admin &&
@@ -31,25 +35,28 @@ export function Card({ plateName, value, image, admin, id }) {
 
       {
         admin &&
-        <Link className="admin" to={`/edit/${id}`}>
+        <Link className="admin" to={`/edit/${data.id}`}>
           <BsPencil size={22} />
         </Link>
       }
 
-      <img src={image} alt={`Imagem do prato/lanche ${plateName}`} />
+      <img src={dishImage} alt={`Imagem do prato/lanche ${data.name}`} />
 
       <Description>
-        <PlateName>
-          <Link to={`/details/${id}`}>
-            <p>{plateName}</p>
+        <DishName>
+          <Link to={`/details/${data.id}`}>
+            <p>{data.name}</p>
             <BsArrowRightShort size={24} />
           </Link>
-        </PlateName>
+        </DishName>
 
-        <span>Rabanetes, folhas verdes e molho agridoce salpicados com gergelim</span>
+        <span>{data.description}</span>
       </Description>
 
-      <Value>R$ {value}</Value>
+      <Value>{data.price.toLocaleString('pt-BR', {
+        style: 'currency',
+        currency: 'BRL',
+      })}</Value>
 
       <Amount admin={admin ? 1 : 0}>
         <div>

@@ -29,10 +29,9 @@ function AuthProvider({ children }) {
       const { token, user } = response.data;
 
       const encryptedUserData = encryptData(user, encryptionKey);
-      const encryptedToken = encryptData(token, encryptionKey);
 
       localStorage.setItem("@foodexplorer:user", encryptedUserData);
-      localStorage.setItem("@foodexplorer:token", encryptedToken);
+      localStorage.setItem("@foodexplorer:token", token);
 
       api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
       setData({ token, user });
@@ -70,11 +69,10 @@ function AuthProvider({ children }) {
 
   useEffect(() => {
     const encryptedUserData = localStorage.getItem("@foodexplorer:user");
-    const encryptedTokenData = localStorage.getItem("@foodexplorer:token");
 
-    if (encryptedUserData && encryptedTokenData) {
+    if (encryptedUserData) {
       const user = decryptData(encryptedUserData, encryptionKey);
-      const token = decryptData(encryptedTokenData, encryptionKey);
+      const token = localStorage.getItem("@foodexplorer:token");
 
       if (user && token) {
         api.defaults.headers.common['Authorization'] = `Bearer ${token}`;

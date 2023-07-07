@@ -77,7 +77,7 @@ export const Amount = styled.div`
   }
 `
 
-export const PlateName = styled.div`
+export const DishName = styled.div`
   display: flex;
   align-items: center;
   margin: 1.2rem 0 ;

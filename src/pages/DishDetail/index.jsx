@@ -5,7 +5,6 @@ import { Footer } from "../../components/Footer";
 import { Ingredient } from "../../components/Ingredient";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { CiReceipt } from "react-icons/ci";
-import prate from "../../assets/prate.png";
 import { ButtonBack } from "../../components/ButtonBack";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../hooks/auth";
@@ -34,7 +33,7 @@ export function DishDetail() {
             <ButtonBack fontSize="2.4rem" size="3.2rem" />
           </Link>
 
-          <img src={prate} alt="imagem do prato"/*{`Imagem do prato/lanche ${plateName}`}*/ />
+          {/* <img src={() => { }} alt="imagem do prato"/*{`Imagem do prato/lanche ${plateName}`}*/ /> */}
 
           <Description>
             <h2>Salada Ravanello</h2>

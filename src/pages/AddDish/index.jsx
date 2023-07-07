@@ -101,7 +101,7 @@ export function AddDish() {
               <InputFile
                 icon={BsUpload}
                 title="Imagem do prato"
-                text={imageFile ? imageFile.name : "Selecione a imagem"}
+                text={imageFile ? imageFile.name : "Selecione a imagem (opcional)"}
                 id="image"
                 onChange={handleChangeImage}
               />
