@@ -24,7 +24,7 @@ export const Container = styled.div`
     display: ${({ admin }) => admin ? 'none' : 'flex'};
 
     svg{
-      fill: ${({ theme, isclicked }) => isclicked ? theme.COLORS.RED : theme.COLORS.WHITE};
+      fill: ${({ theme, isfavorite }) => isfavorite ? theme.COLORS.RED : theme.COLORS.WHITE};
     }
   }
 

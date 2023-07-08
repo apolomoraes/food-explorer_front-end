@@ -2,14 +2,16 @@ import { Container, Amount, DishName, Value, Description } from "./styles";
 import { Button } from '../../components/Button';
 import { AiOutlinePlus, AiOutlineHeart, AiFillHeart, AiOutlineMinus } from "react-icons/ai";
 import { BsArrowRightShort, BsPencil } from "react-icons/bs";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { api } from "../../services/api";
 import imagePlaceHolder from "../../assets/imagePlaceHolder.png";
+import { toastUtils } from "../Toast";
 
 export function Card({ data, admin }) {
   const [amount, setAmount] = useState(0);
-  const [isClicked, setIsClicked] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(false);
+  const [favoriteId, setFavoriteId] = useState(null);
 
   function increment() {
     if (amount >= 0) setAmount(amount + 1);
@@ -19,17 +21,53 @@ export function Card({ data, admin }) {
     if (amount > 0) setAmount(amount - 1);
   };
 
-  function handleClick() {
-    setIsClicked(!isClicked);
-  };
-
   const dishImage = data.image ? `${api.defaults.baseURL}/files/${data.image}` : imagePlaceHolder;
 
+  async function handleFavoriteClick() {
+    try {
+      if (isFavorite) {
+        await api.delete(`/favorites/${favoriteId}`);
+        setIsFavorite(false);
+      } else {
+        const response = await api.post(`/favorites`, { dish_id: data.id });
+        setIsFavorite(true);
+        setFavoriteId(response.data.id);
+      }
+    } catch (error) {
+      if (error.response) {
+        return toastUtils.handleError(error.response.data.message);
+      } else {
+        return toastUtils.handleError("Erro ao favoritar/desfavoritar prato, tente novamente mais tarde");
+      }
+    }
+  }
+
+  useEffect(() => {
+    async function fetchFavorites() {
+      try {
+        const response = await api.get(`/favorites`);
+        const favorites = response.data;
+        const favorite = favorites.find(favorite => favorite.dish_id === data.id);
+        setIsFavorite(favorite ? true : false);
+        setFavoriteId(favorite ? favorite.id : null);
+
+      } catch (error) {
+        if (error.response) {
+          return toastUtils.handleError(error.response.data.message);
+        } else {
+          return toastUtils.handleError("Erro ao buscar pratos favoritos, tente novamente mais tarde");
+        }
+      }
+    }
+
+    fetchFavorites();
+  }, [])
+
   return (
-    <Container isclicked={isClicked ? 1 : 0} admin={admin ? 1 : 0}>
+    <Container isfavorite={isFavorite ? 1 : 0} admin={admin ? 1 : 0}>
       {!admin &&
-        <button onClick={handleClick} className="favorite">
-          {isClicked ? <AiFillHeart size={24} /> : <AiOutlineHeart size={24} />}
+        <button onClick={handleFavoriteClick} className="favorite">
+          {isFavorite ? <AiFillHeart size={24} /> : <AiOutlineHeart size={24} />}
         </button>
       }
 

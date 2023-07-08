@@ -11,6 +11,7 @@ import { useState, useEffect } from "react";
 import { api } from "../../services/api";
 import { toastUtils } from "../../components/Toast";
 import { Link } from "react-router-dom";
+import { Loading } from "../../components/Loading";
 
 export function Home() {
   const { user } = useAuth();
@@ -22,11 +23,13 @@ export function Home() {
   const [drinks, setDrinks] = useState([]);
   const [main, setMain] = useState([]);
   const [snacks, setSnacks] = useState([]);
+  const [showLoading, setShowLoading] = useState(false);
 
   const hasDishes = meals.length > 0 || desserts.length > 0 || drinks.length > 0 || main.length > 0 || snacks.length > 0;
 
   useEffect(() => {
     async function fetchDishes() {
+      setShowLoading(true);
       try {
         const response = await api.get(`/dishes?search=${search}`);
 
@@ -35,7 +38,10 @@ export function Home() {
         setDesserts(response.data.filter((dish) => dish.category === 'dessert'));
         setDrinks(response.data.filter((dish) => dish.category === 'drinks'));
         setSnacks(response.data.filter((dish) => dish.category === 'snacks'));
+
+        setShowLoading(false);
       } catch (error) {
+        setShowLoading(false);
         if (error.response) {
           return toastUtils.handleError(error.response.data.message);
         } else {
@@ -155,7 +161,7 @@ export function Home() {
 
         <Footer />
       </Wrapper>
-
+      {showLoading && <Loading />}
     </Container >
   )
 }
