@@ -7,11 +7,13 @@ import { Link } from "react-router-dom";
 import { api } from "../../services/api";
 import imagePlaceHolder from "../../assets/imagePlaceHolder.png";
 import { toastUtils } from "../Toast";
+import { Loading } from "../Loading";
 
 export function Card({ data, admin }) {
   const [amount, setAmount] = useState(0);
   const [isFavorite, setIsFavorite] = useState(false);
   const [favoriteId, setFavoriteId] = useState(null);
+  const [showLoading, setShowLoading] = useState(false);
 
   function increment() {
     if (amount >= 0) setAmount(amount + 1);
@@ -21,7 +23,24 @@ export function Card({ data, admin }) {
     if (amount > 0) setAmount(amount - 1);
   };
 
-  const dishImage = data.image ? `${api.defaults.baseURL}/files/${data.image}` : imagePlaceHolder;
+  const dishImage = data && data.image ? `${api.defaults.baseURL}/files/${data.image}` : imagePlaceHolder;
+
+  async function handleOrder() {
+    setShowLoading(true);
+    try {
+      await api.post("/requests", { quantity: amount, dish_id: data.id });
+      toastUtils.handleSuccess("Pedido adicionado no carrinho com sucesso");
+
+      setShowLoading(false);
+    } catch (error) {
+      setShowLoading(false);
+      if (error.response) {
+        return toastUtils.handleError(error.response.data.message);
+      } else {
+        return toastUtils.handleError("Erro ao fazer pedido, tente novamente mais tarde");
+      }
+    }
+  }
 
   async function handleFavoriteClick() {
     try {
@@ -106,9 +125,9 @@ export function Card({ data, admin }) {
             <AiOutlinePlus size={24} />
           </button>
         </div>
-        <Button title={'Incluir'} background={'#750310'} />
+        <Button title={'Incluir'} background={'#750310'} onClick={handleOrder} />
       </Amount>
-
+      {showLoading && <Loading />}
     </Container>
   )
 }
