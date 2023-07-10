@@ -58,7 +58,6 @@ export function Home() {
 
       <Wrapper>
         <Content>
-          {/* <MenuMobile /> */}
           <Description>
             <img src={flavors} alt="Alimentos e frutas" />
             <div>

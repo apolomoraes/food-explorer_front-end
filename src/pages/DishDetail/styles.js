@@ -109,9 +109,37 @@ export const Amount = styled.div`
     border: none;
     background: transparent;
   }
+
+  a {
+    display: flex;
+    justify-content: center;
+
+    height: 4.8rem;
+    
+    width: 100%;
+    padding: 1.2rem 2.4rem;
+    gap: .5rem;
+    border-radius: .3rem;
+
+    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_BUTTON_300};
+
+    span {
+      text-align: center;
+      font-size: 1.3rem;
+      font-family: ${({ theme }) => theme.FONT.FONT_POPPINS};
+      font-weight: 500;
+      line-height: 1.6rem;
+
+      color: ${({ theme }) => theme.COLORS.WHITE};
+    }
+
+    @media(min-width: 1024px) {
+      width: 20rem;
+    }
+  }
 `
 
-export const Purchase = styled(Link)`
+export const Purchase = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;

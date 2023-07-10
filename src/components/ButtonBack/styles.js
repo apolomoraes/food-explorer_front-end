@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.button`
     display: flex;
     align-items: center;
-
+    border: none;
+    background-color: transparent;
 
     font-size: ${(props) => props.fontSize};
     font-family: ${({ theme }) => theme.FONT.FONT_POPPINS};
