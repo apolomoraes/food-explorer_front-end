@@ -1,5 +1,5 @@
 import { Header } from "../../components/Header";
-import { Container, Description, Menu, Content, Wrapper } from "./styles";
+import { Container, Description, Menu, Content, Wrapper, NotFound } from "./styles";
 import { Card } from "../../components/Card";
 import flavors from "../../assets/flavors.png";
 import { Section } from "../../components/Section";
@@ -149,9 +149,9 @@ export function Home() {
 
             {!hasDishes && (
               isAdmin ? (
-                <h2>Nenhum prato encontrado, adicione clicando <Link to="/add">aqui</Link></h2>
+                <NotFound>Nenhum prato encontrado, adicione clicando <Link to="/add">aqui</Link></NotFound>
               ) : (
-                <h2>Nenhum prato encontrado</h2>
+                <NotFound>Nenhum prato encontrado</NotFound>
               )
             )}
           </Menu>

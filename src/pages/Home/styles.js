@@ -130,3 +130,18 @@ export const Menu = styled.div`
   flex-direction: column;
   gap: 2.4rem;
 `
+
+export const NotFound = styled.h2`
+  align-self: center;
+  height: 100vh;
+
+  font-family: ${({ theme }) => theme.FONT.FONT_ROBOTO};
+  font-size: clamp(1.8rem, 0.727rem + 1.489vw, 2.5rem);
+  font-weight: 500;
+  line-height: 140%;
+  color: ${({ theme }) => theme.COLORS.GRAY_300};
+
+  a {
+    color: ${({ theme }) => theme.COLORS.GRAY_100};
+  }
+`

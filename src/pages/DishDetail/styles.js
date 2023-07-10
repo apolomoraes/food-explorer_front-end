@@ -70,7 +70,6 @@ export const Content = styled.div`
 
 export const Ingredients = styled.div`
   display: flex;
-  justify-content: center;
   gap: 2.4rem;
 
   flex-wrap: wrap;
@@ -113,6 +112,7 @@ export const Amount = styled.div`
   a {
     display: flex;
     justify-content: center;
+    align-items: center;
 
     height: 4.8rem;
     
@@ -147,7 +147,7 @@ export const Purchase = styled.button`
     height: 4.8rem;
     
     width: 100%;
-    padding: 1.2rem 2.4rem;
+    /* padding: 1.2rem 2.4rem; */
     gap: .5rem;
     border-radius: .3rem;
 

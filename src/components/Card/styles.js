@@ -88,7 +88,7 @@ export const DishName = styled.div`
 
     font-family: ${({ theme }) => theme.FONT.FONT_POPPINS};
     font-weight: 500;
-    font-size: clamp(0.875rem, 0.59rem + 1.064vw, 2.4rem);
+    font-size: clamp(1.4rem, 0.59rem + 1.064vw, 2.4rem);
     line-height: 2.4rem;
   }
 
