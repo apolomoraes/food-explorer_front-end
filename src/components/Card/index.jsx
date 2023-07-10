@@ -125,7 +125,9 @@ export function Card({ data, admin }) {
             <AiOutlinePlus size={24} />
           </button>
         </div>
-        <Button title={'Incluir'} background={'#750310'} onClick={handleOrder} />
+        <div>
+          <Button title={'Incluir'} background={'#750310'} onClick={handleOrder} />
+        </div>
       </Amount>
       {showLoading && <Loading />}
     </Container>

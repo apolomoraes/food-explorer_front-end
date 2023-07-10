@@ -1,6 +1,7 @@
 import { Container, Form, Content, Wrapper, Ingredients } from "./styles";
 import { Header } from "../../components/Header";
 import { Loading } from "../../components/Loading";
+import { Box } from "../../components/Box";
 import { Footer } from "../../components/Footer";
 import { ButtonBack } from "../../components/ButtonBack";
 import { Input } from "../../components/Input";
@@ -13,10 +14,11 @@ import { Button } from "../../components/Button";
 import { IngredientTag } from "../../components/IngredientTag";
 import { Textarea } from "../../components/Textarea";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { useAuth } from "../../hooks/auth";
 import { toastUtils } from "../../components/Toast";
 import { api } from "../../services/api";
-import imagePlaceHolder from "../../assets/imagePlaceHolder.png";
+import Modal from "react-modal";
+
+Modal.setAppElement("#root");
 
 export function EditDish() {
   const [imageFile, setImageFile] = useState(null);
@@ -28,10 +30,18 @@ export function EditDish() {
   const [price, setPrice] = useState(0);
   const [description, setDescription] = useState("");
   const [showLoading, setShowLoading] = useState(false);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const navigate = useNavigate();
   const params = useParams();
 
+  function handleOpenModal() {
+    setModalIsOpen(true);
+  }
+
+  function handleCloseModal() {
+    setModalIsOpen(false);
+  }
 
   function handleAddIngredient() {
     if (newIngredient.length === 0 || newIngredient.length === " ") {
@@ -61,7 +71,7 @@ export function EditDish() {
       setShowLoading(false);
 
       toastUtils.handleSuccess("Prato deletado com sucesso");
-      navigate(-1);
+      navigate("/");
     } catch (error) {
       setShowLoading(false);
       if (error.response) {
@@ -208,10 +218,12 @@ export function EditDish() {
             />
 
             <div>
-              <Button title={'Excluir prato'} background={'#0D161B'} onClick={handleDeletedDish} />
+              <Button title={'Excluir prato'} background={'#0D161B'} onClick={handleOpenModal} />
               <Button title={'Salvar alterações'} background={'#AB4D55'} onClick={handleUpdatedDish} />
             </div>
           </Form>
+
+          <Box handleCloseModal={handleCloseModal} modalIsOpen={modalIsOpen} handleDeletedDish={handleDeletedDish} />
         </Content>
 
         <Footer />

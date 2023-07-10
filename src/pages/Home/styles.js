@@ -46,7 +46,6 @@ export const Wrapper = styled.main`
 export const Content = styled.div`
   grid-area: content;
 
-
   display: flex;
   flex-direction: column;
   

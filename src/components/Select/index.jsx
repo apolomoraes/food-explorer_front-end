@@ -6,7 +6,7 @@ export function Select({ title, ...rest }) {
     <Container>
       <label>{title}</label>
       <Field>
-        <select name="category" required defaultValue='meals' {...rest}>
+        <select name="category" required {...rest}>
           <option value="meals" >Refeições</option>
           <option value="main" >Pratos Principais</option>
           <option value="dessert">Sobremesas</option>

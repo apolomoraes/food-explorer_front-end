@@ -14,7 +14,7 @@ export const Container = styled.div`
   border-radius: .8rem;
 
   > img {
-    width: clamp(5.5rem, 2.996rem + 9.362vw, 11rem);
+    width: clamp(8.8rem, 2.996rem + 9.362vw, 17.6rem);
   }
 
   .favorite {
@@ -35,19 +35,30 @@ export const Container = styled.div`
       fill: ${({ theme }) => theme.COLORS.WHITE};
     }
   }
+
+  @media(min-width: 1024px) {
+    height: fit-content;
+    max-height: 46rem;
+    min-width: 30rem;
+  }
 `
 
 export const Amount = styled.div`
   display: ${({ admin }) => admin ? 'none' : 'flex'};
   align-items: center;
+  justify-content: center;
   flex-direction: column;
   width: 100%;
   
-  > div {
+  > div:nth-child(1) {
     display: flex;
     align-items: center;
     gap: 1.4rem;
     margin: 1.2rem 0 1.6rem 0;
+  }
+
+  > div:nth-child(2) {
+    width: 100%;
   }
 
   span {
@@ -106,7 +117,7 @@ export const DishName = styled.div`
 export const Value = styled.span`
   font-family: ${({ theme }) => theme.FONT.FONT_ROBOTO};
   font-weight: 400;
-  font-size: clamp(1.6rem, 0.545rem + 1.702vw, 2.5rem);
+  font-size: clamp(1.6rem, 0.545rem + 1.702vw, 3rem);
 
 
   text-align: center;

@@ -6,7 +6,7 @@ export const Container = styled.button`
   justify-content: center;
 
   width: 100%;
-  height: 4.8rem;
+  height: 3.2rem;
   border: 0;
 
   background-color: ${props => props.background};
@@ -19,4 +19,8 @@ export const Container = styled.button`
   font-size: 1.4rem;
   line-height: 2.4rem;
   text-align: center;
+
+  @media(min-width: 1024px) {
+    height: 4.8rem;
+  }
 `;

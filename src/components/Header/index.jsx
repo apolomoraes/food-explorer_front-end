@@ -71,7 +71,7 @@ export function Header({ filterDishes }) {
             </>
           }
 
-          <Logout onClick={signOut}>
+          <Logout to="/" onClick={signOut}>
             <RxExit size={24} />
           </Logout>
         </Desktop>

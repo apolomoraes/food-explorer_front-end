@@ -173,7 +173,7 @@ export const New = styled(Link)`
   line-height: 2.4rem;
 `
 
-export const Logout = styled.button`
+export const Logout = styled(Link)`
   border: none;
   background: transparent;
 
