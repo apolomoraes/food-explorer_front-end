@@ -65,7 +65,7 @@ export const Form = styled.form`
     flex-direction: column;
     gap: 3.2rem;
 
-    animation: ${fadeInAnimation} 0.7s;
+    animation: ${fadeInAnimation} .7s;
     animation-delay: 0.3s;
     animation-fill-mode: backwards;
   }

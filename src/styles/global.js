@@ -1,5 +1,5 @@
 import 'react-toastify/dist/ReactToastify.css';
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, keyframes } from "styled-components";
 
 export default createGlobalStyle`
   * {

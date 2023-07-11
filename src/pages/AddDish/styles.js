@@ -1,6 +1,17 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { Wrapper } from '../Home/styles';
 
+const fadeInAnimation = keyframes`
+  from {
+    opacity: 0;
+    transform: translate(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0);
+  }
+`;
 
 export const Container = styled.div`
   min-width: 30rem;
@@ -23,6 +34,7 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   align-items: start;
+  animation: ${fadeInAnimation} .5s;
 
   h1 {
     margin: 3.5rem 0 2.4rem;
