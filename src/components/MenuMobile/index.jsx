@@ -1,35 +1,40 @@
-import { Menu, ContainerMenu, HeaderMenu, ContentMenu, SearchMenu } from "./styles";
-import { AiOutlineClose, AiOutlineSearch } from "react-icons/ai";
+import { Container, Header, Content, Search } from "./styles";
+import { AiOutlineClose, AiOutlineSearch, AiOutlineMenu } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { Footer } from "../../components/Footer";
-import { useState } from "react";
+import { useAuth } from "../../hooks/auth";
 
-export function MenuMobile({ isOpen }) {
+export function MenuMobile({ showMenu, setShowMenu, isAdmin, filterDishes }) {
+  const { signOut } = useAuth();
 
   return (
-    <ContainerMenu>
-      <HeaderMenu>
-        <button>
+    <Container isvisible={showMenu ? 1 : 0} isadmin={isAdmin ? 1 : 0}>
+      <Header>
+        <button onClick={() => setShowMenu(false)}>
           <AiOutlineClose size={28} />
         </button>
         <span>Menu</span>
-      </HeaderMenu>
+      </Header>
 
 
-      <ContentMenu>
-        <SearchMenu>
+      <Content >
+        <Search>
           <AiOutlineSearch size={24} />
-          <input type="text" placeholder="Busque por pratos ou ingredientes" />
-        </SearchMenu>
+          <input
+            type="search"
+            placeholder="Busque por pratos ou ingredientes"
+            onChange={filterDishes}
+          />
+        </Search>
 
-        {/* {
-            isAdmin &&
-            <Link to="/add">Novo prato</Link>
-          } */}
-        <Link onClick={() => { }} to="/">Sair</Link>
-      </ContentMenu>
+        {
+          isAdmin &&
+          <Link to="/add">Novo prato</Link>
+        }
+        <Link onClick={signOut} to="/">Sair</Link>
+      </Content>
 
       <Footer />
-    </ContainerMenu>
+    </Container>
   )
 }

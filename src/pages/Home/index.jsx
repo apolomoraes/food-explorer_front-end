@@ -3,8 +3,7 @@ import { Container, Description, Menu, Content, Wrapper, NotFound } from "./styl
 import { Card } from "../../components/Card";
 import flavors from "../../assets/flavors.png";
 import { Section } from "../../components/Section";
-import Slider from "../../components/Slider";
-import { SwiperSlide } from "swiper/react";
+import { Slider } from "../../components/Slider";
 import { Footer } from "../../components/Footer";
 import { useAuth } from "../../hooks/auth";
 import { useState, useEffect } from "react";
@@ -26,6 +25,11 @@ export function Home() {
   const [showLoading, setShowLoading] = useState(false);
 
   const hasDishes = meals.length > 0 || desserts.length > 0 || drinks.length > 0 || main.length > 0 || snacks.length > 0;
+  // const dish = {
+  //   name: "feijão",
+  //   description: "feijão",
+  //   price: 20
+  // }
 
   useEffect(() => {
     async function fetchDishes() {
@@ -71,15 +75,17 @@ export function Home() {
             {
               meals.length > 0 && (
                 <Section title="Refeições">
-                  {
-                    meals.map(dish => (
-                      <Card
-                        key={String(dish.id)}
-                        data={dish}
-                        admin={isAdmin}
-                      />
-                    ))
-                  }
+                  <Slider>
+                    {
+                      meals.map(dish => (
+                        <Card
+                          key={String(dish.id)}
+                          data={dish}
+                          admin={isAdmin}
+                        />
+                      ))
+                    }
+                  </Slider>
                 </Section>
               )
             }
@@ -87,15 +93,17 @@ export function Home() {
             {
               main.length > 0 && (
                 <Section title="Pratos principais">
-                  {
-                    main.map(dish => (
-                      <Card
-                        key={String(dish.id)}
-                        data={dish}
-                        admin={isAdmin}
-                      />
-                    ))
-                  }
+                  <Slider>
+                    {
+                      main.map(dish => (
+                        <Card
+                          key={String(dish.id)}
+                          data={dish}
+                          admin={isAdmin}
+                        />
+                      ))
+                    }
+                  </Slider>
                 </Section>
               )
             }
@@ -103,15 +111,17 @@ export function Home() {
             {
               desserts.length > 0 && (
                 <Section title="Sobremesas">
-                  {
-                    desserts.map(dish => (
-                      <Card
-                        key={String(dish.id)}
-                        data={dish}
-                        admin={isAdmin}
-                      />
-                    ))
-                  }
+                  <Slider>
+                    {
+                      desserts.map(dish => (
+                        <Card
+                          key={String(dish.id)}
+                          data={dish}
+                          admin={isAdmin}
+                        />
+                      ))
+                    }
+                  </Slider>
                 </Section>
               )
             }
@@ -119,15 +129,17 @@ export function Home() {
             {
               drinks.length > 0 && (
                 <Section title="Bebidas">
-                  {
-                    drinks.map(dish => (
-                      <Card
-                        key={String(dish.id)}
-                        data={dish}
-                        admin={isAdmin}
-                      />
-                    ))
-                  }
+                  <Slider>
+                    {
+                      drinks.map(dish => (
+                        <Card
+                          key={String(dish.id)}
+                          data={dish}
+                          admin={isAdmin}
+                        />
+                      ))
+                    }
+                  </Slider>
                 </Section>
               )
             }
@@ -135,18 +147,31 @@ export function Home() {
             {
               snacks.length > 0 && (
                 < Section title="Lanches">
-                  {
-                    snacks.map(dish => (
-                      <Card
-                        key={String(dish.id)}
-                        data={dish}
-                        admin={isAdmin}
-                      />
-                    ))
-                  }
+                  <Slider>
+                    {
+                      snacks.map(dish => (
+                        <Card
+                          key={String(dish.id)}
+                          data={dish}
+                          admin={isAdmin}
+                        />
+                      ))
+                    }
+                  </Slider>
                 </Section>
               )
             }
+
+            {/* <Section title="teste">
+              <Slider>
+                <Card data={dish} />
+                <Card data={dish} />
+                <Card data={dish} />
+                <Card data={dish} />
+                <Card data={dish} />
+                <Card data={dish} />
+              </Slider>
+            </Section> */}
 
             {!hasDishes && (
               isAdmin ? (

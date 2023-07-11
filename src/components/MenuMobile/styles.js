@@ -1,5 +1,4 @@
-import styled, { keyframes } from "styled-components";
-
+import styled, { css, keyframes } from "styled-components";
 
 const rotateAnimation = keyframes`
   0% {
@@ -10,9 +9,24 @@ const rotateAnimation = keyframes`
   }
 `;
 
-export const ContainerMenu = styled.div`
+export const Container = styled.div`
+  position: absolute; 
+  z-index: 4;
   display: grid;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  transition: .5s;
+  transform: translateY(50px);
+
+  opacity: 0;
+  pointer-events: none;
+
+  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
 
   grid-template-rows: 11.4rem auto;
   grid-template-areas: 
@@ -23,12 +37,18 @@ export const ContainerMenu = styled.div`
 
   overflow-x: hidden;
 
+  ${({ isvisible }) => isvisible && css`
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  `}
+
   @media(min-width: 1024px) {
     display: none;
   }
 `
 
-export const HeaderMenu = styled.div`
+export const Header = styled.div`
   grid-area: header;
 
   width: 100%;
@@ -52,20 +72,22 @@ export const HeaderMenu = styled.div`
     border: none;
     background: transparent;
 
-    animation: ${rotateAnimation} 0.3s ease-in-out;
+    transition: transform .5s ease-in-out;
 
+    &:hover {
+      transform: rotate(-180deg);
+    }
     svg {
     color: ${({ theme }) => theme.COLORS.WHITE};
     }
   }
 `
 
-export const ContentMenu = styled.div`
+export const Content = styled.div`
   grid-area: content;
   width: 100%;
 
   overflow-x: hidden;
-
 
   display: flex;
   flex-direction: column;
@@ -94,7 +116,7 @@ export const ContentMenu = styled.div`
     }
 `
 
-export const SearchMenu = styled.div`
+export const Search = styled.div`
   display: flex;
   margin: 0 auto 4.6rem;
 

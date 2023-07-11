@@ -97,7 +97,10 @@ export function Card({ data, admin }) {
         </Link>
       }
 
-      <img src={dishImage} alt={`Imagem do prato/lanche ${data.name}`} />
+      <img
+        src={dishImage}
+      // alt={`Imagem do prato/lanche ${data.name}`} 
+      />
 
       <Description>
         <DishName>

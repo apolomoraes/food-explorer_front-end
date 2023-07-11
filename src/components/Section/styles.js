@@ -14,8 +14,3 @@ export const Container = styled.section`
     color: ${({ theme }) => theme.COLORS.GRAY_100};
   }
 `
-
-export const Cards = styled.div`
-  display: flex;
-  gap: 1.6rem;
-`

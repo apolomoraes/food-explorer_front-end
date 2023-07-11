@@ -1,5 +1,4 @@
-import styled, { keyframes } from "styled-components";
-import { AiOutlineMenu } from "react-icons/ai";
+import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const Container = styled.div`
@@ -23,9 +22,22 @@ export const Menu = styled.div`
   padding: 0 2.8rem 0 2.8rem;
 
   button {
-    color: ${({ theme }) => theme.COLORS.WHITE};
+    transition: transform .5s ease-in-out;
+
+    &:hover {
+    transform: rotate(180deg);
+    }
+
     border: none;
     background: transparent;
+
+    svg {
+      color: ${({ theme }) => theme.COLORS.WHITE};
+    }
+
+    @media(min-width: 1024px) {
+    display: none;
+    }
   }
 
   .mobile {
@@ -66,18 +78,6 @@ export const Menu = styled.div`
     }
   }
 `;
-
-export const Open = styled(AiOutlineMenu)`
-  transition: transform 0.3s ease-in-out;
-
-  &:hover {
-    transform: rotate(180deg);
-  }
-
-  @media(min-width: 1024px) {
-    display: none;
-  }
-`
 
 export const Desktop = styled.div`
   display: none;
@@ -165,6 +165,7 @@ export const New = styled(Link)`
   align-items: center;
     
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_BUTTON_300};
+  color: ${({ theme }) => theme.COLORS.WHITE};
     
   border-radius: .5rem;
 

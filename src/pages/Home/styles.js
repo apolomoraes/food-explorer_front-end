@@ -135,7 +135,7 @@ export const NotFound = styled.h2`
   height: 100vh;
 
   font-family: ${({ theme }) => theme.FONT.FONT_ROBOTO};
-  font-size: clamp(1.8rem, 0.727rem + 1.489vw, 2.5rem);
+  font-size: clamp(1.4rem, 0.727rem + 1.489vw, 2.5rem);
   font-weight: 500;
   line-height: 140%;
   color: ${({ theme }) => theme.COLORS.GRAY_300};

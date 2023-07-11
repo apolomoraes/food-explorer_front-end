@@ -1,4 +1,4 @@
-import { Container, Cards } from './styles'
+import { Container } from './styles'
 
 export function Section({ title, children, ...rest }) {
   return (
@@ -6,9 +6,9 @@ export function Section({ title, children, ...rest }) {
       <h2>
         {title}
       </h2>
-      <Cards>
+      <div>
         {children}
-      </Cards>
+      </div>
     </Container>
   )
 }
