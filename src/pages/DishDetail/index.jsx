@@ -10,7 +10,7 @@ import { Link, useParams } from "react-router-dom";
 import { useAuth } from "../../hooks/auth";
 import { api } from "../../services/api";
 import { Loading } from "../../components/Loading";
-import imagePlaceHolder from "../../assets/imagePlaceHolder.png";
+import imagePlaceHolder from "../../assets/imagePlaceholder.png";
 import { toastUtils } from "../../components/Toast";
 
 export function DishDetail() {
