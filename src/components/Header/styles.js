@@ -21,7 +21,7 @@ export const Menu = styled.div`
   text-align: center;
   padding: 0 2.8rem 0 2.8rem;
 
-  button {
+  > button {
     transition: transform .5s ease-in-out;
 
     &:hover {
