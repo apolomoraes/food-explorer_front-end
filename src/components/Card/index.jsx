@@ -5,7 +5,7 @@ import { BsArrowRightShort, BsPencil } from "react-icons/bs";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { api } from "../../services/api";
-import imagePlaceHolder from "../../assets/imagePlaceHolder.png";
+import imagePlaceHolder from "../../assets/imagePlaceholder.png";
 import { toastUtils } from "../Toast";
 import { Loading } from "../Loading";
 
