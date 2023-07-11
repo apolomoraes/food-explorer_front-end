@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { fadeInAnimation } from "../SignIn/styles";
+
 
 export const Container = styled.div`
   min-width: 30rem;
@@ -12,29 +14,6 @@ export const Container = styled.div`
   "content"
   "footer"
   ;
-
-  /* .swiper {
-  width: 100%;
-  height: 100%;
-}
-
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-
-  /* Center slide text vertically */
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-
-/* .swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-} */
 `
 
 export const Wrapper = styled.main`
@@ -48,6 +27,10 @@ export const Content = styled.div`
 
   display: flex;
   flex-direction: column;
+
+  animation: ${fadeInAnimation} 0.5s;
+  animation-delay: 0.3s;
+  animation-fill-mode: backwards;
   
   @media(min-width: 1024px) {
     padding: 0 12.4rem;

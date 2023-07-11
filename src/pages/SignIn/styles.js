@@ -1,4 +1,26 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const animation = keyframes`
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+`;
+
+export const fadeInAnimation = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
 
 export const Container = styled.main`
   min-width: 42.8rem;
@@ -13,19 +35,21 @@ export const Form = styled.form`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
+  
   min-width: 31.6rem;
-
+  
   .logo {
     align-self: flex-start;
   }
-
+  
   .wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    
     width: 100%;
+    
+    animation: ${animation} .9s;
   }
 
   .wrapper h1 {
@@ -40,6 +64,10 @@ export const Form = styled.form`
     display: flex;
     flex-direction: column;
     gap: 3.2rem;
+
+    animation: ${fadeInAnimation} 0.7s;
+    animation-delay: 0.3s;
+    animation-fill-mode: backwards;
   }
 
   a {

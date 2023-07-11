@@ -42,7 +42,7 @@ export function SignUp() {
     <Container>
       <Form>
         <div className='logo'>
-          <Logo width={"42px"} height={"42px"} fontSize={"3.6rem"} />
+          <Logo width={"48px"} height={"48px"} fontSize={"3.6rem"} />
         </div>
 
         <div className="wrapper">
