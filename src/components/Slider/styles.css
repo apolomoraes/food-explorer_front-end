@@ -1,0 +1,30 @@
+.swiper-button-prev {
+  width: 77px;
+  color: #fff;
+}
+
+.swiper-button-next {
+  width: 77px;
+  color: #fff;
+}
+
+.swiper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.swiper::before {
+  left: 0;
+  content: '';
+  position: absolute;
+  width: inherit;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(90deg,
+      rgba(0, 10, 15, 0.9) 0%,
+      rgba(0, 10, 15, 0.2) 20%,
+      rgba(0, 10, 15, 0.2) 80%,
+      rgba(0, 10, 15, 1) 100%);
+}

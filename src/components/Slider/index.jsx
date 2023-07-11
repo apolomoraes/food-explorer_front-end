@@ -6,6 +6,8 @@ import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
+import './styles.css'
+
 import { Navigation } from 'swiper/modules';
 
 export function Slider({ children }) {
@@ -14,26 +16,21 @@ export function Slider({ children }) {
       <Swiper
         rewind={true}
         slidesPerView={3}
-        spaceBetween={30}
         navigation={true}
         modules={[Navigation]}
-        className="mySwiper"
+        className="swiper"
         breakpoints={{
           200: {
             slidesPerView: 1,
-            spaceBetween: 30,
           },
           430: {
             slidesPerView: 2,
-            spaceBetween: 40,
           },
           640: {
             slidesPerView: 2,
-            spaceBetween: 30,
           },
           720: {
             slidesPerView: 3,
-            spaceBetween: 40,
           },
         }}
       >
