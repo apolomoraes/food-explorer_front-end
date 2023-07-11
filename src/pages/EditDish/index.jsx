@@ -35,6 +35,10 @@ export function EditDish() {
   const navigate = useNavigate();
   const params = useParams();
 
+  function handleBack() {
+    navigate(-1);
+  }
+
   function handleOpenModal() {
     setModalIsOpen(true);
   }
@@ -152,9 +156,7 @@ export function EditDish() {
 
       <Wrapper>
         <Content>
-          <Link to="/">
-            <ButtonBack fontSize="1.6rem" size="2.2rem" />
-          </Link>
+          <ButtonBack fontSize="1.6rem" size="2.2rem" onClick={handleBack} />
 
           <h1>Editar Prato</h1>
 

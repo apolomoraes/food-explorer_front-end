@@ -99,7 +99,7 @@ export function Card({ data, admin }) {
 
       <img
         src={dishImage}
-      // alt={`Imagem do prato/lanche ${data.name}`} 
+        alt={`Imagem do prato/lanche ${data.name}`}
       />
 
       <Description>

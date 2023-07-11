@@ -147,6 +147,9 @@ export const Description = styled.div`
 
     color: ${({ theme }) => theme.COLORS.GRAY_300};
     max-width: 25rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 `

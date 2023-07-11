@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Wrapper } from '../Home/styles';
-import { Link } from 'react-router-dom';
+import { fadeInAnimation } from '../SignIn/styles';
 
 export const Container = styled.div`
   min-width: 30rem;
@@ -23,7 +23,7 @@ export const Content = styled.div`
 
   margin: 3.6rem 0 1.6rem 0;
   padding: 0 5.6rem;
-
+  animation: ${fadeInAnimation} .5s;
 
   display: flex;
   flex-direction: column;

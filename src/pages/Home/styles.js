@@ -28,7 +28,7 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
 
-  animation: ${fadeInAnimation} 0.5s;
+  animation: ${fadeInAnimation} 0.4s;
   animation-delay: 0.3s;
   animation-fill-mode: backwards;
   

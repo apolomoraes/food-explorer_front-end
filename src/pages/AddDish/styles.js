@@ -1,17 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { Wrapper } from '../Home/styles';
-
-const fadeInAnimation = keyframes`
-  from {
-    opacity: 0;
-    transform: translate(-10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translate(0);
-  }
-`;
+import { fadeInAnimation } from '../SignIn/styles';
 
 export const Container = styled.div`
   min-width: 30rem;
@@ -114,7 +103,7 @@ export const Ingredients = styled.div`
   background: ${({ theme }) => theme.COLORS.BACKGROUND_500};
   
   @media(min-width: 1024px) {
-    height: 4.8rem;  
+    height: fit-content;  
     min-width: 87.3rem;
   }
 }

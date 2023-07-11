@@ -29,6 +29,10 @@ export function AddDish() {
 
   const navigate = useNavigate();
 
+  function handleBack() {
+    navigate(-1);
+  }
+
   async function handleChangeImage(event) {
     const file = event.target.files[0];
     setImageFile(file);
@@ -90,9 +94,7 @@ export function AddDish() {
 
       <Wrapper>
         <Content>
-          <Link to="/">
-            <ButtonBack fontSize="1.6rem" size="2.2rem" />
-          </Link>
+          <ButtonBack fontSize="1.6rem" size="2.2rem" onClick={handleBack} />
 
           <h1>Novo Prato</h1>
 
