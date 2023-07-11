@@ -56,6 +56,7 @@ export function Home() {
     <Container>
       <Header filterDishes={e => setSearch(e.target.value)} />
 
+
       <Wrapper>
         <Content>
           <Description>

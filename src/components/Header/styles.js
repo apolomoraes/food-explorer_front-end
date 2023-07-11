@@ -1,7 +1,6 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { AiOutlineMenu } from "react-icons/ai";
 import { Link } from "react-router-dom";
-
 
 export const Container = styled.div`
   grid-area: header;
@@ -23,8 +22,10 @@ export const Menu = styled.div`
   text-align: center;
   padding: 0 2.8rem 0 2.8rem;
 
-  a {
+  button {
     color: ${({ theme }) => theme.COLORS.WHITE};
+    border: none;
+    background: transparent;
   }
 
   .mobile {
@@ -181,3 +182,5 @@ export const Logout = styled(Link)`
   color: ${({ theme }) => theme.COLORS.WHITE};
   }
 `
+
+

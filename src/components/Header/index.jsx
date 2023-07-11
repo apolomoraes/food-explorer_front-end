@@ -3,7 +3,7 @@ import { BsReceiptCutoff } from "react-icons/bs";
 import { RxExit } from "react-icons/rx";
 import { Logo } from "../Logo";
 import { Container, Menu, Desktop, Search, Open, New, Logout } from "./styles";
-import { Link } from "react-router-dom";
+import { MenuMobile } from "../MenuMobile";
 import { useAuth } from "../../hooks/auth";
 import { useEffect, useState } from "react";
 import { toastUtils } from "../../components/Toast";
@@ -12,7 +12,13 @@ import { api } from "../../services/api";
 export function Header({ filterDishes }) {
   const { user, signOut } = useAuth();
   const isAdmin = user && user.admin ? true : false;
+
   const [totalAmount, setTotalAmount] = useState(0);
+  const [showMenu, setShowMenu] = useState(false);
+
+  function handleOpenMenu() {
+    setShowMenu(true);
+  }
 
   useEffect(() => {
     async function fetchRequests() {
@@ -33,10 +39,13 @@ export function Header({ filterDishes }) {
   }, [])
   return (
     <Container >
+
+      <MenuMobile isOpen={showMenu} />
+
       <Menu>
-        <Link to="/menu">
+        <button type="button" onClick={handleOpenMenu}>
           <Open size={24} />
-        </Link>
+        </button>
         <Logo width={"40px"} height={"40px"} fontSize={"2.2rem"} display={"none"} isAdmin />
 
         <button type="button" className="mobile">

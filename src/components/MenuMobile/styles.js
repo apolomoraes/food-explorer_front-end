@@ -1,5 +1,5 @@
-import styled, { keyframes } from 'styled-components'
-import { AiOutlineClose } from "react-icons/ai";
+import styled, { keyframes } from "styled-components";
+
 
 const rotateAnimation = keyframes`
   0% {
@@ -10,11 +10,9 @@ const rotateAnimation = keyframes`
   }
 `;
 
-export const Container = styled.div`
-  min-width: 30rem;
-  height: 100vh;
-
+export const ContainerMenu = styled.div`
   display: grid;
+  height: 100vh;
 
   grid-template-rows: 11.4rem auto;
   grid-template-areas: 
@@ -30,7 +28,7 @@ export const Container = styled.div`
   }
 `
 
-export const Header = styled.div`
+export const HeaderMenu = styled.div`
   grid-area: header;
 
   width: 100%;
@@ -50,19 +48,21 @@ export const Header = styled.div`
     color: ${({ theme }) => theme.COLORS.GRAY_100};
    }
   
-  > a {
+  > button {
+    border: none;
+    background: transparent;
+
+    animation: ${rotateAnimation} 0.3s ease-in-out;
+
     svg {
     color: ${({ theme }) => theme.COLORS.WHITE};
     }
   }
 `
 
-export const Close = styled(AiOutlineClose)`
-  animation: ${rotateAnimation} 0.3s ease-in-out;
-`
-
-export const Content = styled.div`
+export const ContentMenu = styled.div`
   grid-area: content;
+  width: 100%;
 
   overflow-x: hidden;
 
@@ -94,7 +94,7 @@ export const Content = styled.div`
     }
 `
 
-export const Search = styled.div`
+export const SearchMenu = styled.div`
   display: flex;
   margin: 0 auto 4.6rem;
 
