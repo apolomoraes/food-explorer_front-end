@@ -10,7 +10,7 @@ import { toastUtils } from "../Toast";
 import { Loading } from "../Loading";
 
 export function Card({ data, admin }) {
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState(1);
   const [isFavorite, setIsFavorite] = useState(false);
   const [favoriteId, setFavoriteId] = useState(null);
   const [showLoading, setShowLoading] = useState(false);
@@ -26,6 +26,10 @@ export function Card({ data, admin }) {
   const dishImage = data && data.image ? `${api.defaults.baseURL}/files/${data.image}` : imagePlaceHolder;
 
   async function handleOrder() {
+    if (amount <= 0) {
+      return toastUtils.handleInfo("Quantidade inválida");
+    }
+
     setShowLoading(true);
     try {
       await api.post("/requests", { quantity: amount, dish_id: data.id });

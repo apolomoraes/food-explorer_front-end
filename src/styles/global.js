@@ -71,6 +71,18 @@ export default createGlobalStyle`
   }
 
   .Toastify__toast-body {
-  font-size: 1.6rem;
+    font-size: 1.4rem;
+
+    @media(min-width: 1024px) {
+    font-size: 1.6rem;
+    }
+  }
+
+  .Toastify__toast-container {
+    width: 36rem;
+
+    @media(min-width: 1024px) {
+    width: 32rem;
+    }
   }
 `;

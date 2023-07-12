@@ -52,7 +52,7 @@ export function Header({ filterDishes }) {
 
         <button type="button" className="mobile">
           <BsReceiptCutoff size={24} />
-          <div>0</div>
+          <div>{totalAmount}</div>
         </button>
 
         <Search>

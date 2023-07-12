@@ -22,7 +22,6 @@ Modal.setAppElement("#root");
 
 export function EditDish() {
   const [imageFile, setImageFile] = useState(null);
-  const [imageName, setImageName] = useState("");
   const [name, setName] = useState("");
   const [category, setCategory] = useState("meals");
   const [ingredients, setIngredients] = useState([]);
@@ -65,7 +64,6 @@ export function EditDish() {
   async function handleChangeImage(event) {
     const file = event.target.files[0];
     setImageFile(file);
-    setImageName(file.name);
   }
 
   async function handleDeletedDish() {
@@ -134,7 +132,6 @@ export function EditDish() {
         setPrice(dish.price);
         setIngredients(dish.ingredients.map(ingredient => ingredient.name));
         setDescription(dish.description);
-        setImageFile(dish.image);
 
         setShowLoading(false);
       } catch (error) {
@@ -165,7 +162,7 @@ export function EditDish() {
               <InputFile
                 icon={BsUpload}
                 title="Imagem do prato"
-                text={imageName || imageFile ? imageName || imageFile : "Selecione a imagem (opcional)"}
+                text={imageFile ? imageFile.name : "Deixe o campo vazio para manter imagem anterior"}
                 onChange={handleChangeImage}
                 id="image" />
 
