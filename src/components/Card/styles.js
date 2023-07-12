@@ -43,6 +43,7 @@ export const Container = styled.div`
     height: fit-content;
     max-height: 46rem;
     min-width: 30rem;
+    max-width: 34rem;
   }
 `
 

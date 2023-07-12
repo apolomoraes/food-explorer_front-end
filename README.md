@@ -29,6 +29,42 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ##
 
+## 💡 Utilização
+  Deploy: https://foodexplorer-apolomoraes.netlify.app
+
+  Você também pode executá-la em sua máquina localmente. Certifique-se de ter o Node.js e o npm instalados antes de prosseguir com as etapas abaixo:
+
+  1. Clone o projeto:
+
+  ```
+  git clone https://github.com/apolomoraes/food-explorer_front-end.git
+  ou
+  gh repo clone apolomoraes/food-explorer_front-end
+  ```
+
+  2. Acesse a pasta do projeto:
+
+  ```
+  $ cd food-explorer_front-end
+  ```
+
+  3. Instale as dependências:
+
+  ```
+  $ npm install
+  ```
+
+  4. Inicie o servidor:
+
+  ```
+  $ npm run dev
+  ```
+
+## Conta de admin
+
+- E-mail: admin@gmail.com
+- Password: 123456
+
 ## 👨‍💻 Veja o [Back-end](https://github.com/apolomoraes/food-explorer_back-end) 
 
 ## 💻 Projeto
