@@ -15,6 +15,9 @@ export const Container = styled.div`
 
   > img {
     width: clamp(8.8rem, 2.996rem + 9.362vw, 17.6rem);
+    height: clamp(8.8rem, 2.996rem + 9.362vw, 17.6rem);
+    border-radius: 999px;
+    object-fit: cover;
   }
 
   .favorite {

@@ -37,6 +37,9 @@ export const Content = styled.div`
 
    img {
     width: clamp(16.5rem, 12.914rem + 13.404vw, 39rem);
+    height:  clamp(16.5rem, 12.914rem + 13.404vw, 39rem);
+    border-radius: 999px;
+    object-fit: cover;
   }
 
    h2 {
