@@ -183,7 +183,6 @@ export function Home() {
           </Menu>
         </Content>
 
-
         <Footer />
       </Wrapper>
       {showLoading && <Loading />}

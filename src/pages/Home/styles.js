@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { fadeInAnimation } from "../SignIn/styles";
 
 
-export const Container = styled.div`
+export const Container = styled.main`
   min-width: 30rem;
   height: 100vh;
 
@@ -16,17 +16,17 @@ export const Container = styled.div`
   ;
 `
 
-export const Wrapper = styled.main`
+export const Wrapper = styled.div`
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
-`
+  grid-area: content;
+  `
 
 export const Content = styled.div`
-  grid-area: content;
-
   display: flex;
   flex-direction: column;
+  width: 100%;
 
   animation: ${fadeInAnimation} 0.4s;
   animation-delay: 0.3s;
