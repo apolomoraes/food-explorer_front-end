@@ -15,6 +15,7 @@ export function Slider({ children }) {
     <>
       <Swiper
         rewind={true}
+        spaceBetween={30}
         slidesPerView={3}
         navigation={true}
         modules={[Navigation]}
@@ -22,15 +23,19 @@ export function Slider({ children }) {
         breakpoints={{
           200: {
             slidesPerView: 1,
+            spaceBetween: 30
           },
           430: {
             slidesPerView: 2,
+            spaceBetween: 30
           },
           640: {
             slidesPerView: 2,
+            spaceBetween: 30
           },
           720: {
             slidesPerView: 3,
+            spaceBetween: 30
           },
         }}
       >
