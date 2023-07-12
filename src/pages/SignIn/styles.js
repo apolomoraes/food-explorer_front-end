@@ -29,7 +29,6 @@ export const Container = styled.main`
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow-x: hidden;
 `;
 
 export const Form = styled.form`
@@ -37,6 +36,7 @@ export const Form = styled.form`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
   
   min-width: 31.6rem;
   
